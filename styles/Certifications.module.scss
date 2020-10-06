@@ -1,0 +1,27 @@
+@import "_base";
+
+.section {
+  background: $medium-grey;
+}
+
+.cert_container {
+  display: flex;
+  justify-content: center;
+
+  .badge {
+    display: block;
+    height: 10rem;
+    width: 10rem;
+    transition: all 0.05s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

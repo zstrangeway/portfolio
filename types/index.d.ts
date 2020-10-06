@@ -1,3 +1,9 @@
+export type Certification = {
+  name: string;
+  imageUrl: string;
+  link: string;
+};
+
 export type HistoryItem = {
   employer: string;
   positions: Position[];
