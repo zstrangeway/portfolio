@@ -1,6 +1,6 @@
 import styles from "../styles/Hero.module.scss";
-import Linkedin from "../components/icons/Linkedin";
-import Github from "../components/icons/Github";
+import Linkedin from "./Icons/Linkedin";
+import Github from "./Icons/Github";
 
 const Hero = (): JSX.Element => {
   const svgSize = "48px";

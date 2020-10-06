@@ -1,0 +1,54 @@
+@import "_base";
+
+.section {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.row {
+  display: flex;
+}
+
+.skill_list {
+  margin-top: 2rem;
+}
+
+.skill_list_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill_list_title {
+  margin-left: 4rem;
+}
+
+.skill_list_underline {
+  margin: 0 4rem;
+  border-color: $green;
+}
+
+.skill_set_item {
+  width: 50%;
+  padding: 1rem 4rem;
+}
+
+.skill_set_item_title {
+  text-align: center;
+  color: $white;
+}
+
+.skill_set_item_bar {
+  display: flex;
+  height: 10px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  align-items: flex-start;
+  background-color: $light-grey;
+}
+
+.skill_set_item_bar_inner {
+  display: block;
+  height: 100%;
+  background-color: $lime;
+}

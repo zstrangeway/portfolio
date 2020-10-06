@@ -4,12 +4,11 @@ import Education from "../components/Education";
 import WorkHistory from "../components/WorkHistory";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
-import Skills from "../components/Skills";
-import styles from "../styles/Home.module.css";
+import Skills from "../components/Skills/Skills";
 
 const Home = (): JSX.Element => {
   return (
-    <div className={styles.container}>
+    <>
       <Hero />
       <Skills />
       <Certifications />
@@ -17,7 +16,7 @@ const Home = (): JSX.Element => {
       <Education />
       <Projects />
       <Contact />
-    </div>
+    </>
   );
 };
 
