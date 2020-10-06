@@ -1,11 +1,11 @@
-import styles from "../styles/Experience.module.css";
-import { HistoryItem } from "../types";
+import { HistoryItem } from "../../types";
 import WorkHistoryItem from "./WorkHistoryItem";
+import styles from "../../styles/WorkHistory.module.scss";
 
 const WorkHistory = (): JSX.Element => {
   return (
-    <div className={styles.container}>
-      <h2>Work History</h2>
+    <section className={styles.section}>
+      <h2 className={styles.section_header}>Work History</h2>
       {workHistory.map((historyItem) => {
         return (
           <WorkHistoryItem
@@ -14,7 +14,7 @@ const WorkHistory = (): JSX.Element => {
           />
         );
       })}
-    </div>
+    </section>
   );
 };
 

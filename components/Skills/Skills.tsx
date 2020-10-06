@@ -28,7 +28,7 @@ const skillSets: SkillSet[] = [
         level: 95,
       },
       {
-        name: "Javascript",
+        name: "Javascript/Typescript",
         level: 85,
       },
       {

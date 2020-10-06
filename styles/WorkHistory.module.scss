@@ -1,0 +1,14 @@
+@import "_base";
+
+.work_position {
+  display: flex;
+  margin: 0 4rem 2rem 4rem;
+
+  .work_position_details {
+    width: 40%;
+  }
+
+  .work_position_duties {
+    width: 60%;
+  }
+}
