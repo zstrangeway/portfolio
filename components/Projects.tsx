@@ -34,7 +34,7 @@ const projects: Project[] = [
   {
     title: "The Poison Spider",
     date: "Planned",
-    url: "thepoisonspider.com",
+    url: "https://thepoisonspider.com",
     githubUrl: "https://github.com/zstrangeway/poison-spider",
     details: [],
   },

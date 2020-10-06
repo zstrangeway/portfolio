@@ -1,28 +1,34 @@
-import styles from "../styles/Hero.module.css";
+import styles from "../styles/Hero.module.scss";
+import Linkedin from "../components/icons/Linkedin";
+import Github from "../components/icons/Github";
 
 const Hero = (): JSX.Element => {
+  const svgSize = "48px";
   return (
-    <div className={styles.container}>
-      <h1>Zachary Strangeway</h1>
-      <p>
+    <section className={styles.section}>
+      <div className={styles.links}>
         <a
           href="https://www.linkedin.com/in/zstrangeway/"
           target="_blank"
           rel="noreferrer"
         >
-          LinkedIn
+          <Linkedin width={svgSize} height={svgSize} />
         </a>
-      </p>
-      <p>
         <a
           href="https://github.com/zstrangeway"
           target="_blank"
           rel="noreferrer"
         >
-          Github
+          <Github width={svgSize} height={svgSize} />
         </a>
-      </p>
-    </div>
+      </div>
+      <div className={styles.spacer}></div>
+      <h1 className={styles.title}>
+        Zachary
+        <br />
+        Strangeway
+      </h1>
+    </section>
   );
 };
 
