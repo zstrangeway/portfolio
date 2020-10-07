@@ -3,7 +3,7 @@ import Contact from "../components/Contact";
 import Education from "../components/Education";
 import WorkHistory from "../components/WorkHistory/WorkHistory";
 import Hero from "../components/Hero";
-import Projects from "../components/Projects";
+import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills/Skills";
 
 const Home = (): JSX.Element => {

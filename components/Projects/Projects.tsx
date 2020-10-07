@@ -1,14 +1,15 @@
-import { Project } from "../types";
-import ProjectItem from "../components/ProjectItem";
+import { Project } from "../../types";
+import ProjectItem from "./ProjectItem";
+import styles from "../../styles/Projects.module.scss";
 
 const Projects = (): JSX.Element => {
   return (
-    <div>
-      <h2>Projects</h2>
+    <section className={styles.section}>
+      <h2 className={styles.section_header}>Projects</h2>
       {projects.map((project) => {
         return <ProjectItem key={project.title} project={project} />;
       })}
-    </div>
+    </section>
   );
 };
 
@@ -22,6 +23,8 @@ const projects: Project[] = [
     githubUrl: "https://github.com/zstrangeway/red-comet",
     details: [
       "A static site with Vue.js/Nuxt.js with a backend created in AWS with S3, Lambda, API Gateway, DynamoDB, and CloudFormation",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     ],
   },
   {
@@ -29,13 +32,21 @@ const projects: Project[] = [
     date: "In Progress",
     url: "https://zacstrangeway.com/",
     githubUrl: "https://github.com/zstrangeway/portfolio",
-    details: [],
+    details: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    ],
   },
   {
     title: "The Poison Spider",
     date: "Planned",
     url: "https://thepoisonspider.com",
     githubUrl: "https://github.com/zstrangeway/poison-spider",
-    details: [],
+    details: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    ],
   },
 ];
