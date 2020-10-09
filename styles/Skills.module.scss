@@ -26,6 +26,7 @@
   
         &:first-child {
           @extend .skillset_theme_secondary_background;
+          margin-top: 0;
           z-index: 2;
         }
   

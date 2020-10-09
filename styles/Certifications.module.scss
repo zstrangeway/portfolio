@@ -1,27 +1,38 @@
 @import "_base";
 
-.section {
+.certifications {
+  @extend .section;
   background: $secondary-background;
-}
 
-.cert_container {
-  display: flex;
-  justify-content: center;
+  .certifications_container {
+    @extend .container;
 
-  .badge {
-    display: block;
-    height: 10rem;
-    width: 10rem;
-    transition: all 0.05s ease-in-out;
-
-    &:hover {
-      transform: scale(1.05);
+    .certifications_title {
+      @extend .section_header;
     }
 
-    img {
-      display: block;
-      height: 100%;
-      width: 100%;
+    .certifications_badge_wrapper {
+      display: flex;
+      justify-content: center;
+    
+      .certifications_badge {
+        display: block;
+        height: 10rem;
+        width: 10rem;
+        transition: $transition_quick;
+    
+        &:hover {
+          transform: scale(1.05);
+        }
+    
+        .certifications_badge_image {
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+      }
     }
   }
 }
+
+

@@ -3,22 +3,27 @@ import styles from "../styles/Certifications.module.scss";
 
 const Certifications = (): JSX.Element => {
   return (
-    <section className={styles.section}>
-      <h2 className={styles.section_header}>Certifications</h2>
-      <div className={styles.cert_container}>
-        {certs.map((cert) => {
-          return (
-            <a
-              key={cert.name}
-              className={styles.badge}
-              href={cert.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={cert.imageUrl} />
-            </a>
-          );
-        })}
+    <section className={styles.certifications}>
+      <div className={styles.certifications_container}>
+        <h2 className={styles.certifications_title}>Certifications</h2>
+        <div className={styles.certifications_badge_wrapper}>
+          {certs.map((cert) => {
+            return (
+              <a
+                key={cert.name}
+                className={styles.certifications_badge}
+                href={cert.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className={styles.certifications_badge_image}
+                  src={cert.imageUrl}
+                />
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
