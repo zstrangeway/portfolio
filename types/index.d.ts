@@ -26,12 +26,7 @@ export type Project = {
   details: string[];
 };
 
-export type Skill = {
-  name: string;
-  level: number;
-};
-
 export type SkillSet = {
   subject: string;
-  skills: Skill[];
+  skills: string[];
 };

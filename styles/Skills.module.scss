@@ -1,40 +1,88 @@
 @import "_base";
 
-.row {
-  display: flex;
+.skills {
+  @extend .section;
+
+  .skills_container {
+    @extend .container;
+
+    .skills_title {
+      @extend .section_header;
+    }
+  
+    .skills_skillset_wrapper {
+      display: block;
+      position: relative;
+
+      .skills_skillset {
+        position: relative;
+        padding: 2em;
+        width: 55%;
+        margin-top: -5%;
+
+        &:nth-child(even) {
+          margin-left: auto;
+        }
+  
+        &:first-child {
+          @extend .skillset_theme_secondary_background;
+          z-index: 2;
+        }
+  
+        &:nth-child(2) {
+          @extend .skillset_theme_secondary_color;
+          z-index: 3;
+        }
+  
+        &:nth-child(3) {
+          @extend .skillset_theme_primary_color;
+          z-index: 2;
+        }
+  
+        &:nth-child(4) {
+          @extend .skillset_theme_secondary_color;
+          z-index: 1;
+        }
+
+        .skills_skillset_title {
+          text-align: center;
+          font-size: 1.4rem;
+          margin: 0 0 1em 0;
+        }
+
+        .skills_skillset_skill_wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          .skills_skillset_skill {
+            margin: 0.5em 1.5em;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
 }
 
-.skill_list {
-  margin-top: 2rem;
+.skillset_theme_secondary_background {
+  background-color: $secondary-background;
 }
 
-.skill_list_container {
-  display: flex;
-  flex-wrap: wrap;
+.skillset_theme_primary_color {
+  background-color: $primary;
+  color: $secondary-background;
+
+  .skills_skillset_title {
+    color: $secondary-background;
+  }
 }
 
-.skill_set_item {
-  width: 50%;
-  padding: 1rem 4rem;
-}
+.skillset_theme_secondary_color {
+  background-color: $secondary;
+  color: $background;
 
-.skill_set_item_title {
-  text-align: center;
-  color: $base-text-color;
-}
-
-.skill_set_item_bar {
-  display: flex;
-  height: 10px;
-  width: 100%;
-  border-radius: 5px;
-  overflow: hidden;
-  align-items: flex-start;
-  background-color: $light;
-}
-
-.skill_set_item_bar_inner {
-  display: block;
-  height: 100%;
-  background-color: $primary-color;
+  .skills_skillset_title {
+    color: $background;
+  }
 }

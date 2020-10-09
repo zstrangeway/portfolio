@@ -1,21 +1,19 @@
 @import "_variables";
 
 .section {
-  width: 100%;
-  padding: 2rem 0 4rem 0;
-}
+  display: flex;
+  justify-content: center;
+  padding: $min_inset;
 
-.section_header {
-  text-align: center;
-  font-size: 3.5rem;
-  color: $accent-text-color;
-}
+  .container {
+    width: 100%;
+    max-width: 900px;
+  }
 
-.section_subheader {
-  margin-left: 4rem;
-}
-
-.section_subheader_underline {
-  margin: 0 4rem;
-  border-color: $secondary-color;
+  .section_header {
+    margin: 0 0 2em 0;
+    text-align: center;
+    font-size: 3.5rem;
+    color: $accent-text-color;
+  }
 }

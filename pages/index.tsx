@@ -6,7 +6,7 @@ import Hero from "../components/Hero";
 import Links from "../components/Links";
 import Pager from "../components/Pager";
 import Projects from "../components/Projects/Projects";
-import Skills from "../components/Skills/Skills";
+import Skills from "../components/Skills";
 
 const Home = (): JSX.Element => {
   return (
