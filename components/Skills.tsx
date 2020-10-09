@@ -50,7 +50,7 @@ const skillSets: SkillSet[] = [
   },
   {
     subject: "Mobile Development",
-    skills: ["iOS", "Swift", "Android", "Kotlin"],
+    skills: ["iOS", "Swift", "Android", "Kotlin", "MVVM", "Gradle"],
   },
   {
     subject: "AWS",
@@ -68,5 +68,9 @@ const skillSets: SkillSet[] = [
   {
     subject: "General",
     skills: ["Git", "SQL"],
+  },
+  {
+    subject: "Hobbies",
+    skills: ["Brewing", "Guitar", "Gaming", "Gardening"],
   },
 ];

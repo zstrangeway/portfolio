@@ -45,6 +45,11 @@
           z-index: 1;
         }
 
+        &:nth-child(5) {
+          @extend .skillset_theme_secondary_background;
+          z-index: 2;
+        }
+
         .skills_skillset_title {
           text-align: center;
           font-size: 1.4rem;
