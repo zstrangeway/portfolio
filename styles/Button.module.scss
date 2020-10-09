@@ -1,0 +1,16 @@
+@import "_base";
+
+.button {
+  font-size: 1rem;
+  padding: 0.25em 1.5em;
+  background: $secondary;
+  color: $secondary-background;
+  border: 0;
+  border-radius: 0.2em;
+  cursor: pointer;
+  transition: $transition_quick;
+
+  &:hover {
+    background: $primary;
+  }
+}

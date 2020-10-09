@@ -1,6 +1,12 @@
+import Button from "./Button";
 import styles from "../styles/Contact.module.scss";
 
 const Contact = (): JSX.Element => {
+  const handleSubmit = () => {
+    // TODO: Submit form
+    console.log("submit form");
+  };
+
   return (
     <section className={styles.contact}>
       <div className={styles.contact_container}>
@@ -25,7 +31,9 @@ const Contact = (): JSX.Element => {
             className={styles.contact_form_textarea}
             placeholder="Message"
           ></textarea>
-          <button className={styles.contact_form_button}>Submit</button>
+          <Button className={styles.contact_form_button} onClick={handleSubmit}>
+            Submit
+          </Button>
         </div>
       </div>
     </section>
