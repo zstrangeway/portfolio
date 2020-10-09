@@ -30,6 +30,10 @@
           color: $base-text-color;
           opacity: 0.5;
         }
+
+        &:focus {
+          outline: none;
+        }
       }
 
       .contact_form_textarea {

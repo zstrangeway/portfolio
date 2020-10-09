@@ -13,4 +13,8 @@
   &:hover {
     background: $primary;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
