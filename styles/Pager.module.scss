@@ -1,0 +1,48 @@
+@import "_base";
+
+$spacing: 0.5em;
+$indicator_size: 1em;
+$color: $primary;
+$stroke: 2px;
+$inset: 3em - ($indicator_size / 2);
+
+.pager {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: $inset;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+
+  .pager_line {
+    display: block;
+    flex-grow: 1;
+    width: $stroke;
+    background-color: $color;
+  }
+
+  .pager_indicator_wrapper {
+    margin: ($spacing * 2) 0;
+
+    .pager_indicator {
+      display: block;
+      margin-bottom: $spacing;
+      height: $indicator_size;
+      width: $indicator_size;
+      border: $stroke solid $color;
+      border-radius: $indicator_size/2;
+      cursor: pointer;
+      transition: $transition_quick;
+
+      &:last-child {
+        margin: 0;
+      }
+  
+      &:hover {
+        background: $color;
+        transform: scale(1.15);
+      }
+    }
+  }
+}
