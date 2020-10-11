@@ -1,14 +1,70 @@
 @import "_base";
 
-.work_position {
-  display: flex;
-  margin: 0 4rem 2rem 4rem;
+.work_history {
+  @extend .section;
 
-  .work_position_details {
-    width: 40%;
-  }
+  .work_history_container {
+    @extend .container;
 
-  .work_position_duties {
-    width: 60%;
+    .work_history_title {
+      @extend .section_header;
+  
+    }
+  
+    .work_history_wrapper {
+      display: flex;
+
+      .work_history_employer_list {
+        flex-shrink: 0;
+
+        .work_history_employer_list_item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0.5rem;
+          cursor: pointer;
+
+          .work_history_employer_list_item_arrow {
+            display: block;
+            height: 0.8rem;
+            width: auto;
+            margin-right: 0.3em;
+            fill: none;
+            stroke: $primary;
+            stroke-width: 4;
+            transition: $transition_quick;
+          }
+
+          .work_history_employer_list_item_text {
+            transition: $transition_quick;
+          }
+
+          &.selected {
+            .work_history_employer_list_item_arrow {
+              fill: $primary;
+            }
+          }
+
+          &:hover {
+            .work_history_employer_list_item_arrow {
+              transform: translateX(-0.25em);
+            }
+
+            .work_history_employer_list_item_text {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .work_history_details {
+        margin-left: 3em;
+      }
+    }
+
+    .work_history_resume_link {
+      display: block;
+      margin: 3em auto 0 auto;
+      width: fit-content;
+    }
   }
 }

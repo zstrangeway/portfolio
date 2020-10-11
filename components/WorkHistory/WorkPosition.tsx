@@ -7,15 +7,15 @@ type WorkPositionProps = {
 
 const WorkPosition = ({ position }: WorkPositionProps): JSX.Element => {
   return (
-    <div className={styles.work_position}>
-      <div className={styles.work_position_details}>
+    <div>
+      <div>
         <h4>{position.title}</h4>
         <p>{position.location}</p>
         <p>
           {position.start} - {position.end}
         </p>
       </div>
-      <div className={styles.work_position_duties}>
+      <div>
         <ul>
           {position.duties.map((duty) => {
             return <li key={duty}>{duty}</li>;

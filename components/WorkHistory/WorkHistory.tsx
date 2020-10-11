@@ -1,19 +1,53 @@
+import { useState } from "react";
 import { HistoryItem } from "../../types";
-import WorkHistoryItem from "./WorkHistoryItem";
+import Arrow from "../icons/Arrow";
+import WorkPosition from "./WorkPosition";
 import styles from "../../styles/WorkHistory.module.scss";
+import Button from "../Button";
 
 const WorkHistory = (): JSX.Element => {
+  const [selectedItem, setItem] = useState(workHistory[0]);
+
   return (
-    <section className={styles.section}>
-      <h2 className={styles.section_header}>Work History</h2>
-      {workHistory.map((historyItem) => {
-        return (
-          <WorkHistoryItem
-            key={historyItem.employer}
-            historyItem={historyItem}
-          />
-        );
-      })}
+    <section className={styles.work_history}>
+      <div className={styles.work_history_container}>
+        <h2 className={styles.work_history_title}>Work History</h2>
+        <div className={styles.work_history_wrapper}>
+          <ul className={styles.work_history_employer_list}>
+            {workHistory.map((historyItem) => {
+              return (
+                <li
+                  key={historyItem.employer}
+                  className={`${styles.work_history_employer_list_item} + ${
+                    historyItem == selectedItem ? styles.selected : ""
+                  }`}
+                  onClick={() => setItem(historyItem)}
+                >
+                  <Arrow
+                    className={styles.work_history_employer_list_item_arrow}
+                  />
+                  <div className={styles.work_history_employer_list_item_text}>
+                    {historyItem.employer}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+          <div className={styles.work_history_details}>
+            {selectedItem.positions.map((position) => {
+              return <WorkPosition key={position.title} position={position} />;
+            })}
+          </div>
+        </div>
+        <a
+          className={styles.work_history_resume_link}
+          href="resume.pdf"
+          target="_blank"
+          rel="no-referrer"
+        >
+          <Button>Resume</Button>
+        </a>
+      </div>
     </section>
   );
 };
@@ -40,7 +74,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    employer: "Gravy Live",
+    employer: "Gravy",
     positions: [
       {
         title: "Senior Software Engineer",
@@ -57,7 +91,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    employer: "Greenleaf Media",
+    employer: "Greenleaf",
     positions: [
       {
         title: "Web Developer/Project Manager",
@@ -78,7 +112,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    employer: "World Council of Credit Unions",
+    employer: "WOCCU",
     positions: [
       {
         title: "Web Software Developer",
@@ -108,7 +142,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    employer: "Telephone and Data Systems Corporation",
+    employer: "Suttle-Straus",
     positions: [
       {
         title: "IT Application Support Specialist",
@@ -126,6 +160,11 @@ const workHistory: HistoryItem[] = [
           "Trek",
         ],
       },
+    ],
+  },
+  {
+    employer: "TDS",
+    positions: [
       {
         title: "IT Support Technician 3",
         location: "Madison, WI",
@@ -144,41 +183,6 @@ const workHistory: HistoryItem[] = [
         duties: [
           "Supported internal employees of TDS, TDS Telecom, and US Cellular with tech support inquiries.",
         ],
-      },
-      {
-        title: "Sr Consumer Sales Advisor",
-        location: "Madison, WI",
-        start: "4/2009",
-        end: "8/2011",
-        duties: [
-          "Supported and mentored customer service advisors.",
-          "Handled customer escalations.",
-        ],
-      },
-      {
-        title: "Consumer Sales Support Advisor",
-        location: "Madison, WI",
-        start: "1/2009",
-        end: "4/2009",
-        duties: [
-          "Piloted new department and helped define processes for entering orders requested by sales advisors.",
-        ],
-      },
-      {
-        title: "Consumer Sales Advisor",
-        location: "Madison, WI",
-        start: "8/2008",
-        end: "1/2009",
-        duties: [
-          "Handled customer service inquiries and sold services to new and existing customers.",
-        ],
-      },
-      {
-        title: "Financial Services Advisor",
-        location: "Madison, WI",
-        start: "1/2008",
-        end: "8/2008",
-        duties: ["Handled customer inquiries about past due accounts."],
       },
     ],
   },

@@ -1,0 +1,9 @@
+<svg width="100%" height="100%" viewBox="0 0 28 18">
+    <defs>
+        <path id="ld" d="M0,0L0,17.173L27.288,8.587L0,0Z"/>
+        <clipPath id="clip">
+            <use href="#ld"/>
+        </clipPath>
+    </defs>
+    <path d="M0,0L0,17.173L27.288,8.587L0,0Z" clip-path="url(#clip)" />
+</svg>
