@@ -1,6 +1,8 @@
 export { default as AppleAppStore } from './AppleAppStore'
 export { default as Arrow } from './Arrow'
+export { default as Email } from './Email'
 export { default as ExternalLink } from './ExternalLink'
 export { default as Github } from './Github'
 export { default as GooglePlay } from './GooglePlay'
 export { default as Linkedin } from './Linkedin'
+export { default as Resume } from './Resume'

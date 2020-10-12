@@ -1,5 +1,7 @@
-import Linkedin from "./Icons/Linkedin";
+import Email from "./Icons/Email";
 import Github from "./Icons/Github";
+import Linkedin from "./Icons/Linkedin";
+import Resume from "./Icons/Resume";
 import styles from "../styles/Links.module.scss";
 
 const Links = (): JSX.Element => {
@@ -21,6 +23,22 @@ const Links = (): JSX.Element => {
         rel="noreferrer"
       >
         <Github />
+      </a>
+      <a
+        className={styles.links_link}
+        href="mailto:zac.strangeway@gmail.com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Email />
+      </a>
+      <a
+        className={styles.links_link}
+        href="resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Resume />
       </a>
     </div>
   );
