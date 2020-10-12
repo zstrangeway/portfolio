@@ -20,10 +20,12 @@ export type Position = {
 
 export type Project = {
   title: string;
-  date: string;
-  url: string;
-  githubUrl: string;
-  details: string[];
+  description: string;
+  technologies: string[];
+  url?: string;
+  githubUrl?: string;
+  appleAppStoreUrl?: string;
+  googlePlayUrl?: string;
 };
 
 export type SkillSet = {
