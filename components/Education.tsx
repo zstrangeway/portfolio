@@ -1,8 +1,12 @@
 import styles from "../styles/Education.module.scss";
 
-const Education = (): JSX.Element => {
+type EducationProps = {
+  id: string;
+};
+
+const Education = ({ id }: EducationProps): JSX.Element => {
   return (
-    <section className={styles.education}>
+    <section id={id} className={styles.education}>
       <div className={styles.education_container}>
         <h2 className={styles.education_title}>Education</h2>
         <h3 className={styles.education_school}>Herzing University</h3>

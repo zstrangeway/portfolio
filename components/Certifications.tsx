@@ -1,9 +1,13 @@
 import { Certification } from "../types";
 import styles from "../styles/Certifications.module.scss";
 
-const Certifications = (): JSX.Element => {
+type CertificationsProps = {
+  id: string;
+};
+
+const Certifications = ({ id }: CertificationsProps): JSX.Element => {
   return (
-    <section className={styles.certifications}>
+    <section id={id} className={styles.certifications}>
       <div className={styles.certifications_container}>
         <h2 className={styles.certifications_title}>Certifications</h2>
         <div className={styles.certifications_badge_wrapper}>

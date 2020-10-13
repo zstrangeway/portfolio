@@ -2,9 +2,13 @@ import { Project } from "../../types";
 import ProjectItem from "./ProjectItem";
 import styles from "../../styles/Projects.module.scss";
 
-const Projects = (): JSX.Element => {
+type ProjectsProps = {
+  id: string;
+};
+
+const Projects = ({ id }: ProjectsProps): JSX.Element => {
   return (
-    <section className={styles.projects}>
+    <section id={id} className={styles.projects}>
       <div className={styles.projects_container}>
         <h2 className={styles.projects_title}>Projects</h2>
         <div className={styles.projects_list}>

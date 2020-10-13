@@ -28,6 +28,11 @@ export type Project = {
   googlePlayUrl?: string;
 };
 
+export type Section = {
+  id: string;
+  label: string;
+};
+
 export type SkillSet = {
   subject: string;
   skills: string[];

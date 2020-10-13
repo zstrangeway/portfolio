@@ -1,9 +1,13 @@
 import styles from "../styles/Skills.module.scss";
 import { SkillSet } from "../types";
 
-const Skills = (): JSX.Element => {
+type SkillsProps = {
+  id: string;
+};
+
+const Skills = ({ id }: SkillsProps): JSX.Element => {
   return (
-    <section className={styles.skills}>
+    <section id={id} className={styles.skills}>
       <div className={styles.skills_container}>
         <h2 className={styles.skills_title}>Skills</h2>
         <div className={styles.skills_skillset_wrapper}>

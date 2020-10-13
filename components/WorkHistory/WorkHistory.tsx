@@ -5,11 +5,15 @@ import WorkPosition from "./WorkPosition";
 import styles from "../../styles/WorkHistory.module.scss";
 import Button from "../Button";
 
-const WorkHistory = (): JSX.Element => {
+type WorkHistoryProps = {
+  id: string;
+};
+
+const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
   const [selectedItem, setItem] = useState(workHistory[0]);
 
   return (
-    <section className={styles.work_history}>
+    <section id={id} className={styles.work_history}>
       <div className={styles.work_history_container}>
         <h2 className={styles.work_history_title}>Work History</h2>
         <div className={styles.work_history_wrapper}>

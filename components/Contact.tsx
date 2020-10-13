@@ -1,14 +1,18 @@
 import Button from "./Button";
 import styles from "../styles/Contact.module.scss";
 
-const Contact = (): JSX.Element => {
+type ContactProps = {
+  id: string;
+};
+
+const Contact = ({ id }: ContactProps): JSX.Element => {
   const handleSubmit = () => {
     // TODO: Submit form
     console.log("submit form");
   };
 
   return (
-    <section className={styles.contact}>
+    <section id={id} className={styles.contact}>
       <div className={styles.contact_container}>
         <h2 className={styles.contact_title}>Contact</h2>
         <div className={styles.contact_form}>

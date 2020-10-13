@@ -1,8 +1,12 @@
 import styles from "../styles/Hero.module.scss";
 
-const Hero = (): JSX.Element => {
+type HeroProps = {
+  id: string;
+};
+
+const Hero = ({ id }: HeroProps): JSX.Element => {
   return (
-    <section className={styles.hero}>
+    <section id={id} className={styles.hero}>
       <div className={styles.hero_container}>
         <div className={styles.hero_title_wrapper}>
           <h1 className={styles.hero_title}>
