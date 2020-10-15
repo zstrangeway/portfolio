@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { HistoryItem } from "../../types";
 import Arrow from "../icons/Arrow";
 import WorkPosition from "./WorkPosition";
 import styles from "../../styles/WorkHistory.module.scss";
 import Button from "../Button";
+import useEnterTween from "../../hooks/useEnterTween";
 
 type WorkHistoryProps = {
   id: string;
@@ -11,12 +12,14 @@ type WorkHistoryProps = {
 
 const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
   const [selectedItem, setItem] = useState(workHistory[0]);
+  const ref = useRef();
+  useEnterTween(ref);
 
   return (
     <section id={id} className={styles.work_history}>
       <div className={styles.work_history_container}>
         <h2 className={styles.work_history_title}>Work History</h2>
-        <div className={styles.work_history_wrapper}>
+        <div ref={ref} className={styles.work_history_wrapper}>
           <ul className={styles.work_history_employer_list}>
             {workHistory.map((historyItem) => {
               return (

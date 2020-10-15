@@ -19,7 +19,7 @@
         display: block;
         height: 10rem;
         width: 10rem;
-        transition: $transition_quick;
+        transition: transform 0.1s ease-in-out;
     
         &:hover {
           transform: scale(1.05);

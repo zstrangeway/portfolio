@@ -17,3 +17,17 @@
     color: $accent-text-color;
   }
 }
+
+.onScreen_fade_zoom, .offScreen_fade_zoom {
+  transition: $transition_on_screen;
+}
+
+.onScreen_fade_zoom {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.offScreen_fade_zoom {
+  opacity: 0;
+  transform: scale(0.8);
+}

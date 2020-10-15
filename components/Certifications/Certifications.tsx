@@ -1,5 +1,6 @@
-import { Certification } from "../types";
-import styles from "../styles/Certifications.module.scss";
+import { Certification } from "../../types";
+import CertificationBadge from "./CertificationBadge";
+import styles from "../../styles/Certifications.module.scss";
 
 type CertificationsProps = {
   id: string;
@@ -12,20 +13,7 @@ const Certifications = ({ id }: CertificationsProps): JSX.Element => {
         <h2 className={styles.certifications_title}>Certifications</h2>
         <div className={styles.certifications_badge_wrapper}>
           {certs.map((cert) => {
-            return (
-              <a
-                key={cert.name}
-                className={styles.certifications_badge}
-                href={cert.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  className={styles.certifications_badge_image}
-                  src={cert.imageUrl}
-                />
-              </a>
-            );
+            return <CertificationBadge key={cert.name} cert={cert} />;
           })}
         </div>
       </div>

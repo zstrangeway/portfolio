@@ -1,4 +1,4 @@
-import Certifications from "../components/Certifications";
+import Certifications from "../components/Certifications/Certifications";
 import Contact from "../components/Contact";
 import Education from "../components/Education";
 import WorkHistory from "../components/WorkHistory/WorkHistory";

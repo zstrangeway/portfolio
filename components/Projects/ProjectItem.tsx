@@ -4,14 +4,19 @@ import ExternalLink from "../Icons/ExternalLink";
 import Github from "../Icons/Github";
 import GooglePlay from "../Icons/GooglePlay";
 import styles from "../../styles/Projects.module.scss";
+import { useRef } from "react";
+import useEnterTween from "../../hooks/useEnterTween";
 
 type ProjectItemProps = {
   project: Project;
 };
 
 const ProjectItem = ({ project }: ProjectItemProps): JSX.Element => {
+  const ref = useRef();
+  useEnterTween(ref);
+
   return (
-    <div className={styles.project_item}>
+    <div ref={ref} className={styles.project_item}>
       <h4 className={styles.project_item_title}>{project.title}</h4>
       <p className={styles.project_item_description}>{project.description}</p>
       <div className={styles.project_item_spacer}></div>

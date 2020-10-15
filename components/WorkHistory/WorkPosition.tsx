@@ -1,5 +1,4 @@
 import { Position } from "../../types";
-import styles from "../../styles/WorkHistory.module.scss";
 
 type WorkPositionProps = {
   position: Position;
