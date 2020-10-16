@@ -5,6 +5,9 @@ import WorkPosition from "./WorkPosition";
 import styles from "../../styles/WorkHistory.module.scss";
 import Button from "../Button";
 import useEnterTween from "../../hooks/useEnterTween";
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles);
 
 type WorkHistoryProps = {
   id: string;
@@ -25,9 +28,10 @@ const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
               return (
                 <li
                   key={historyItem.employer}
-                  className={`${styles.work_history_employer_list_item} + ${
-                    historyItem == selectedItem ? styles.selected : ""
-                  }`}
+                  className={cx({
+                    work_history_employer_list_item: true,
+                    selected: historyItem == selectedItem,
+                  })}
                   onClick={() => setItem(historyItem)}
                 >
                   <Arrow

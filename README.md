@@ -36,10 +36,10 @@ My online resume and portfolio.
   - Certifications Section
   - Work History Section
   - Education Section?
-
-- Make contact form post to API
   
 - House Keeping
   - Enable GZip/Brotli compression on CloudFront
   - Create CI/CD Pipeline
   - Set FROM and TO emails by parameter in SAM template
+  - Handle cache busting
+  - SEO/pagespeed

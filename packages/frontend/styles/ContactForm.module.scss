@@ -1,0 +1,25 @@
+@import "_base";
+
+.contact {
+  @extend .section;
+  background: $secondary-background;
+
+  .contact_container {
+    @extend .container;
+    max-width: 600px;
+
+    .contact_title {
+      @extend .section_header;
+    }
+
+    .contact_form {
+      display: flex;
+      flex-direction: column;
+
+      .contact_form_button {
+        align-self: flex-end;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

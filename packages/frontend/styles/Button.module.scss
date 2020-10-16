@@ -1,6 +1,7 @@
 @import "_base";
 
 .button {
+  position: relative;
   font-size: 1rem;
   padding: 0.25em 1.5em;
   background: $secondary;
@@ -16,5 +17,37 @@
 
   &:focus {
     outline: none;
+  }
+
+  &:disabled {
+    background: rgba($secondary, 0.5);
+    cursor: not-allowed;
+  }
+
+  .button_text {
+    display: inline;
+    opacity: 1;
+    transition: $transition_quick;
+
+    &.loading {
+      opacity: 0;
+    }
+  }
+
+  .button_loader_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: $transition_quick;
+
+    &.loading {
+      opacity: 1;
+    }
   }
 }

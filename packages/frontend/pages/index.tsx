@@ -1,5 +1,5 @@
 import Certifications from "../components/Certifications/Certifications";
-import Contact from "../components/Contact";
+import Contact from "../components/ContactForm";
 import Education from "../components/Education";
 import WorkHistory from "../components/WorkHistory/WorkHistory";
 import Hero from "../components/Hero";

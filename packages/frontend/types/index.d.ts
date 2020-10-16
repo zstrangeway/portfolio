@@ -4,6 +4,13 @@ export type Certification = {
   link: string;
 };
 
+export type Contact = {
+  email: string;
+  name: string;
+  subject: string;
+  message: string;
+};
+
 export type HistoryItem = {
   employer: string;
   positions: Position[];

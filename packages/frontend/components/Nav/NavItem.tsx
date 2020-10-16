@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Section } from "../../types";
 import styles from "../../styles/Nav.module.scss";
+import classNames from "classnames/bind";
+
+const cx = classNames.bind(styles);
 
 type NavItemProps = {
   section: Section;
@@ -12,7 +15,10 @@ const NavItem = ({ section }: NavItemProps): JSX.Element => {
 
   return (
     <div
-      className={`${styles.nav_item} ${isActive ? styles.active : ""}`}
+      className={cx({
+        nav_item: true,
+        active: isActive,
+      })}
       onClick={handleClick}
     >
       <div className={styles.nav_item_dot} />

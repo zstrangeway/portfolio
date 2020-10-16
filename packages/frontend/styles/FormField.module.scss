@@ -1,0 +1,65 @@
+@import "_base";
+
+.form_field {
+
+  .form_field_text, 
+  .form_field_textarea {
+    background: rgba($light, 0.15);
+    width: 100%;
+    font-family: $base-font;
+    color: $base-text-color;
+    border: none;
+    
+    font-size: 1rem;
+    padding: 0.75rem;
+  
+    &::placeholder {
+      color: $base-text-color;
+      opacity: 0.5;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  .form_field_textarea {
+    height: 15rem;
+  }
+
+  .form_field_meta {
+    display: flex;
+    justify-content: space-between;
+
+    .form_error_counter {
+      margin: 0.5em 0 1.5em 0;
+      font-size: 0.8em;
+    }
+  }
+}
+
+$error-font-size: 0.8em;
+$color: red;
+
+.form_field_error {
+  color: $color;
+  margin-bottom: 0;
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  svg {
+    height: $error-font-size;
+    width: $error-font-size;
+    margin-right: $error-font-size / 2;
+    margin-bottom: -($error-font-size / 10);
+    fill: $color;
+  }
+
+  .form_error_message {
+    margin: 0.5em 0 1.5em 0;
+    font-size: $error-font-size;
+  }
+}
