@@ -51,6 +51,97 @@ Resources:
         - Key: Service
           Value: Frontend
 
+# API
+###############################################################################
+
+  Certificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: !Ref ApiDomainName
+      ValidationMethod: DNS
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+
+  API:
+    Type: AWS::Serverless::Api
+    Properties:
+      Domain:
+        DomainName: !Ref ApiDomainName
+        CertificateArn: !Ref Certificate
+        EndpointConfiguration: EDGE
+        Route53:
+          HostedZoneName: !Join ["", [!Ref HostedZone, "."]]
+          EvaluateTargetHealth: true
+      StageName: !Sub ${Environment}
+      Tags:
+        Environment: !Ref Environment
+        Service: Contact
+
+# Contact Service
+###############################################################################
+
+  PostContactLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${Environment}-PostContact
+      Handler: index.post
+      Runtime: nodejs12.x
+      CodeUri: dist/contact 
+      MemorySize: 128 
+      Timeout: 30
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Role:
+        Fn::GetAtt: [ PostContactLambdaRole , Arn ]
+      Events:
+        MyEndpoint:
+          Type: Api 
+          Properties:
+            Path: /contact
+            Method: post
+            RestApiId:
+              Ref: API
+      Environment:
+        Variables:
+          TO_EMAIL: zac.strangeway@gmail.com # TODO: set email via parameter
+          FROM_EMAIL: zac.strangeway@gmail.com # TODO: set email via parameter
+      Tags:
+        Environment: !Ref Environment
+        Service: Contact
+
+  PostContactLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow #allow lambda to assume this role
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+      Policies:
+        - PolicyName: LambdaRolePolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Action:
+              - logs:CreateLogGroup
+              - logs:CreateLogStream
+              - logs:PutLogEvents
+              Resource: arn:aws:logs:*:*:*
+            - Effect: Allow
+              Action:
+              - ses:GetIdentityVerificationAttributes
+              - ses:SendEmail
+              - ses:SendRawEmail
+              - ses:VerifyEmailIdentity"
+              Resource: "*" # TODO: Limit permissions
+
 ###############################################################################
 Outputs:
 ###############################################################################

@@ -22,8 +22,10 @@ My online resume and portfolio.
 
 # Backlog
 - Add Parallax animations for Skills Section ...and maybe a background image?
+- Add transitions when selecting work history items
 - Decide on fonts
   - Update hero image with new fonts
+- Create models layer for type consistency?
 
 - Update Nav component to use more semantic HTML tags
 
@@ -35,14 +37,9 @@ My online resume and portfolio.
   - Work History Section
   - Education Section?
 
-- Add Contact form lambda
-  - Refactor to monorepo with lerna
-  - Make contact form post to API
-
+- Make contact form post to API
+  
 - House Keeping
   - Enable GZip/Brotli compression on CloudFront
-  - Create AWS infrastructure
-    - CI/CD
-    - SES
-    - Lambda
-    - API Gateway
+  - Create CI/CD Pipeline
+  - Set FROM and TO emails by parameter in SAM template

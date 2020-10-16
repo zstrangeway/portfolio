@@ -21,7 +21,13 @@
     "url": "https://github.com/zstrangeway/portfolio/issues"
   },
   "homepage": "https://github.com/zstrangeway/portfolio#readme",
+  "dependencies": {
+    "aws-lambda": "^1.0.6",
+    "aws-sdk": "^2.772.0"
+  },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.62",
+    "@types/aws-sdk": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
     "eslint": "^7.11.0",
