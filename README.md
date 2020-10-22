@@ -26,16 +26,12 @@ My online resume and portfolio.
 - Decide on fonts
   - Update hero image with new fonts
 - Create models layer for type consistency?
-
-- Update Nav component to use more semantic HTML tags
+- Resume button download icon?
 
 - Mobile Responsiveness
   - Navigation
   - Fixed links
-  - Skills Section
-  - Certifications Section
   - Work History Section
-  - Education Section?
   
 - House Keeping
   - Enable GZip/Brotli compression on CloudFront

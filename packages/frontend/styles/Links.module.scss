@@ -7,36 +7,38 @@ $stroke: 2px;
 $inset: 3em - ($link_size / 2);
 
 .links {
-  display: flex;
-  position: fixed;
-  top: 0;
-  right: $inset;
-  height: 100vh;
-  padding-bottom: $inset;
-  flex-direction: column;
-  align-items: center;
+  display: none;
 
-  .links_line {
-    display: block;
-    flex-grow: 1;
-    width: $stroke;
-    background-color: $color;
-  }
+  @media only screen and (min-width: $desktop-breakpoint) {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: $inset;
+    height: 100vh;
+    padding-bottom: $inset;
+    flex-direction: column;
+    align-items: center;
 
-  .links_link {
-    transition: $transition_quick;
-
-    &:hover {
-      transform: scale(1.1);
+    .links_line {
+      display: block;
+      flex-grow: 1;
+      width: $stroke;
+      background-color: $color;
     }
-
-    svg {
-      height: $link_size;
-      width: $link_size;
-      margin-top: $spacing;
-      fill: $primary;
-    }
-  }
-
   
+    .links_link {
+      transition: $transition_quick;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+  
+      svg {
+        height: $link_size;
+        width: $link_size;
+        margin-top: $spacing;
+        fill: $primary;
+      }
+    }
+  }
 }

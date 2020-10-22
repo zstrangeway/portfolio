@@ -17,8 +17,13 @@
       .skills_skillset {
         position: relative;
         padding: 2em;
-        width: 55%;
-        margin-top: -5%;
+        margin-bottom: 1em;
+
+        @media only screen and (min-width: $desktop-breakpoint) {
+          width: 55%;
+          margin-top: -5%;
+          margin-bottom: 0;
+        }
 
         &:nth-child(even) {
           margin-left: auto;
@@ -52,8 +57,12 @@
 
         .skills_skillset_title {
           text-align: center;
-          font-size: 1.4rem;
+          font-size: 1.2rem;
           margin: 0 0 1em 0;
+
+          @media only screen and (min-width: $desktop-breakpoint) {
+            font-size: 1.4rem;
+          }
         }
 
         .skills_skillset_skill_wrapper {
@@ -63,7 +72,12 @@
 
           .skills_skillset_skill {
             margin: 0.5em 1.5em;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            text-align: center;
+
+            @media only screen and (min-width: $desktop-breakpoint) {
+              font-size: 1.1rem;
+            }
           }
         }
       }

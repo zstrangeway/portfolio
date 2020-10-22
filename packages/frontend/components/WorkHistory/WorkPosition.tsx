@@ -1,4 +1,5 @@
 import { Position } from "../../types";
+import styles from "../../styles/WorkHistory.module.scss";
 
 type WorkPositionProps = {
   position: Position;
@@ -6,7 +7,7 @@ type WorkPositionProps = {
 
 const WorkPosition = ({ position }: WorkPositionProps): JSX.Element => {
   return (
-    <div>
+    <div className={styles.work_position}>
       <div>
         <h4>{position.title}</h4>
         <p>{position.location}</p>

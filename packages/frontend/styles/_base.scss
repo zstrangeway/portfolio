@@ -3,7 +3,11 @@
 .section {
   display: flex;
   justify-content: center;
-  padding: $min_inset;
+  padding: $desktop_inset $mobile_inset;
+
+  @media only screen and (min-width: $desktop-breakpoint) {
+    padding: $desktop_inset;
+  }
 
   .container {
     width: 100%;
@@ -13,8 +17,14 @@
   .section_header {
     margin: 0 0 1em 0;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: $accent-text-color;
+    word-break: break-word;
+    hyphens: auto;
+
+    @media only screen and (min-width: $desktop-breakpoint) {
+      font-size: 3.5rem;
+    }
   }
 }
 

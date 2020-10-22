@@ -8,56 +8,56 @@
 
     .work_history_title {
       @extend .section_header;
-  
     }
-  
+
     .work_history_wrapper {
       display: flex;
+      flex-direction: column;
 
       .work_history_employer_list {
+        display: flex;
+        overflow-x: scroll;
         flex-shrink: 0;
+        list-style: none;
+        padding: 0;
+        margin: 1em (-$mobile-inset);
 
         .work_history_employer_list_item {
-          display: flex;
-          align-items: center;
-          margin-bottom: 0.5rem;
           cursor: pointer;
 
-          .work_history_employer_list_item_arrow {
+          &:after {
+            content: " ";
             display: block;
-            height: 0.8rem;
-            width: auto;
-            margin-right: 0.3em;
-            fill: none;
-            stroke: $primary;
-            stroke-width: 4;
+            bottom: 0;
+            width: 0%;
+            height: 0.1em;
+            margin: 0 auto;
+            background: $primary;
             transition: $transition_quick;
-          }
-
-          .work_history_employer_list_item_text {
-            transition: $transition_quick;
-          }
-
-          &.selected {
-            .work_history_employer_list_item_arrow {
-              fill: $primary;
-            }
           }
 
           &:hover {
-            .work_history_employer_list_item_arrow {
-              transform: translateX(-0.25em);
-            }
+            color: $white;
+          }
 
-            .work_history_employer_list_item_text {
+          &.selected {
               color: $white;
-            }
+
+              &:after {
+                width: 100%;
+              }
+          }
+
+          .work_history_employer_list_item_arrow {
+            display: none;
+          }
+
+          .work_history_employer_list_item_text {
+            padding: 0.5em 1em;
+            white-space: nowrap;
+            transition: $transition_quick;
           }
         }
-      }
-
-      .work_history_details {
-        margin-left: 3em;
       }
     }
 
@@ -66,5 +66,67 @@
       margin: 3em auto 0 auto;
       width: fit-content;
     }
+  
+    @media only screen and (min-width: $desktop-breakpoint) {
+      .work_history_wrapper {
+        flex-direction: row;
+
+        .work_history_employer_list {
+          flex-direction: column;
+          overflow-x: visible;
+  
+          .work_history_employer_list_item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+
+            &:hover {
+              background: none;
+            }
+
+            &:after {
+              display: none;
+            }
+  
+            .work_history_employer_list_item_arrow {
+              display: block;
+              height: 0.8rem;
+              width: auto;
+              margin-right: 0.3em;
+              fill: none;
+              stroke: $primary;
+              stroke-width: 4;
+              transition: $transition_quick;
+            }
+  
+            .work_history_employer_list_item_text {
+              padding: 0;
+            }
+  
+            &.selected {
+              .work_history_employer_list_item_arrow {
+                fill: $primary;
+              }
+            }
+  
+            &:hover {
+              .work_history_employer_list_item_arrow {
+                transform: translateX(-0.25em);
+              }
+            }
+          }
+        }
+  
+        .work_history_details {
+          margin-left: 3em;
+        }
+      }
+    }
+  }
+}
+
+.work_position {
+  li {
+    margin-bottom: 0.5em;
   }
 }
