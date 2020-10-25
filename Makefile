@@ -12,6 +12,8 @@ DOMAIN:=zacstrangeway.com
 GITHUB_OWNER:=zstrangeway
 GITHUB_REPO:=portfolio
 GITHUB_BRANCH:=master # TODO: change to develop for dev
+PROFILE:=za_zac
+DISTRIBUTION_ID:=E113VJOGL4F6CC
 
 # Stack names
 PROJECT:=${STAGE}-${APP_NAME}
@@ -37,6 +39,8 @@ ifeq (${STAGE}, prod)
 		GITHUB_BRANCH:=master
 		API_DOMAIN:=api.${DOMAIN}
 		FRONTEND_DOMAIN:=${DOMAIN}
+		# TODO: update distribution ID for prod
+		DISTRIBUTION_ID:=E113VJOGL4F6CC 
 endif
 
 .PHONY: create_deploy_bucket
@@ -96,4 +100,19 @@ deploy:
 			FrontendLogBucketName=${FRONT_END_LOG_BUCKET}
 
 	# deploy web applications to S3
-	aws s3 sync ./dist/frontend s3://${FRONT_END_BUCKET}
+	aws s3 sync \
+		./dist/frontend \
+		s3://${FRONT_END_BUCKET} \
+		--delete \
+		--cache-control max-age=31536000
+	
+	aws s3 cp \
+		./dist/frontend/index.html \
+		s3://${FRONT_END_BUCKET} \
+		--cache-control max-age=0,no-cache
+
+	aws cloudfront create-invalidation \
+		--distribution-id ${DISTRIBUTION_ID} \
+		--paths "/index.html" \
+		--output yaml-stream \
+		--profile ${PROFILE}

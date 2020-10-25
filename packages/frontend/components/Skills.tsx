@@ -1,5 +1,6 @@
 import styles from "../styles/Skills.module.scss";
 import { SkillSet } from "../types";
+import SkillsCard from "./SkillsCard";
 
 type SkillsProps = {
   id: string;
@@ -13,20 +14,11 @@ const Skills = ({ id }: SkillsProps): JSX.Element => {
         <div className={styles.skills_skillset_wrapper}>
           {skillSets.map((skillSet) => {
             return (
-              <div key={skillSet.subject} className={styles.skills_skillset}>
-                <h3 className={styles.skills_skillset_title}>
-                  {skillSet.subject}
-                </h3>
-                <div className={styles.skills_skillset_skill_wrapper}>
-                  {skillSet.skills.map((skill) => {
-                    return (
-                      <p key={skill} className={styles.skills_skillset_skill}>
-                        {skill}
-                      </p>
-                    );
-                  })}
-                </div>
-              </div>
+              <SkillsCard
+                key={skillSet.subject}
+                skillSet={skillSet}
+                height={skillSet.height}
+              />
             );
           })}
         </div>
@@ -51,10 +43,12 @@ const skillSets: SkillSet[] = [
       "React.js",
       "Next.js",
     ],
+    height: 1,
   },
   {
     subject: "Mobile Development",
     skills: ["iOS", "Swift", "Android", "Kotlin", "MVVM", "Gradle"],
+    height: 2,
   },
   {
     subject: "AWS",
@@ -68,13 +62,16 @@ const skillSets: SkillSet[] = [
       "API Gateway",
       "CodePipeline",
     ],
+    height: 3,
   },
   {
     subject: "General",
     skills: ["Git", "SQL"],
+    height: 4,
   },
   {
     subject: "Hobbies",
     skills: ["Brewing", "Guitar", "Gaming", "Gardening"],
+    height: 5,
   },
 ];

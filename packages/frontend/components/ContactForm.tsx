@@ -1,7 +1,7 @@
 import Button from "./Button";
 import styles from "../styles/ContactForm.module.scss";
 import { useRef, useState } from "react";
-import useEnterTween from "../hooks/useEnterTween";
+import useTween from "../hooks/useTween";
 import ContactService from "../services/contact";
 import { toast } from "react-toastify";
 import ToastTransition from "../utils/ToastTransition";
@@ -20,7 +20,7 @@ const ContactForm = ({ id }: ContactProps): JSX.Element => {
   const { handleSubmit, errors, control, reset } = useForm();
   const [loading, setLoading] = useState(false);
   const ref = useRef();
-  useEnterTween(ref);
+  useTween(ref, "fadeIn");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const defaultValues: UnpackNestedValue<any> = {
     name: "",

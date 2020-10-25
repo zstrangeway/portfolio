@@ -5,7 +5,7 @@ import Github from "../Icons/Github";
 import GooglePlay from "../Icons/GooglePlay";
 import styles from "../../styles/Projects.module.scss";
 import { useRef } from "react";
-import useEnterTween from "../../hooks/useEnterTween";
+import useTween from "../../hooks/useTween";
 
 type ProjectItemProps = {
   project: Project;
@@ -13,7 +13,7 @@ type ProjectItemProps = {
 
 const ProjectItem = ({ project }: ProjectItemProps): JSX.Element => {
   const ref = useRef();
-  useEnterTween(ref);
+  useTween(ref, "fadeIn");
 
   return (
     <div ref={ref} className={styles.project_item}>

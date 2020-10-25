@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import styles from "../styles/Education.module.scss";
-import useEnterTween from "../hooks/useEnterTween";
+import useTween from "../hooks/useTween";
 
 type EducationProps = {
   id: string;
@@ -8,7 +8,7 @@ type EducationProps = {
 
 const Education = ({ id }: EducationProps): JSX.Element => {
   const ref = useRef();
-  useEnterTween(ref);
+  useTween(ref, "fadeIn");
 
   return (
     <section id={id} className={styles.education}>

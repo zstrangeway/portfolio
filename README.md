@@ -21,21 +21,15 @@ My online resume and portfolio.
   - SES
 
 # Backlog
-- Add Parallax animations for Skills Section ...and maybe a background image?
 - Add transitions when selecting work history items
 - Decide on fonts
   - Update hero image with new fonts
 - Create models layer for type consistency?
 - Resume button download icon?
-
-- Mobile Responsiveness
-  - Navigation
-  - Fixed links
-  - Work History Section
+- Add footer?
   
 - House Keeping
   - Enable GZip/Brotli compression on CloudFront
   - Create CI/CD Pipeline
   - Set FROM and TO emails by parameter in SAM template
-  - Handle cache busting
   - SEO/pagespeed

@@ -4,7 +4,7 @@ import Arrow from "../icons/Arrow";
 import WorkPosition from "./WorkPosition";
 import styles from "../../styles/WorkHistory.module.scss";
 import Button from "../Button";
-import useEnterTween from "../../hooks/useEnterTween";
+import useTween from "../../hooks/useTween";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
@@ -16,7 +16,7 @@ type WorkHistoryProps = {
 const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
   const [selectedItem, setItem] = useState(workHistory[0]);
   const ref = useRef();
-  useEnterTween(ref);
+  useTween(ref, "fadeIn");
 
   return (
     <section id={id} className={styles.work_history}>

@@ -43,4 +43,5 @@ export type Section = {
 export type SkillSet = {
   subject: string;
   skills: string[];
+  height: number;
 };

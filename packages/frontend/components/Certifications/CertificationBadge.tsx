@@ -1,7 +1,7 @@
 import { Certification } from "../../types";
 import styles from "../../styles/Certifications.module.scss";
 import { useRef } from "react";
-import useEnterTween from "../../hooks/useEnterTween";
+import useTween from "../../hooks/useTween";
 
 type CertificationBadgeProps = {
   cert: Certification;
@@ -9,7 +9,7 @@ type CertificationBadgeProps = {
 
 const CertificationBadge = ({ cert }: CertificationBadgeProps): JSX.Element => {
   const ref = useRef();
-  useEnterTween(ref);
+  useTween(ref, "fadeIn");
 
   return (
     <a
