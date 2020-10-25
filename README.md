@@ -29,7 +29,5 @@ My online resume and portfolio.
 - Add footer?
   
 - House Keeping
-  - Enable GZip/Brotli compression on CloudFront
   - Create CI/CD Pipeline
   - Set FROM and TO emails by parameter in SAM template
-  - SEO/pagespeed

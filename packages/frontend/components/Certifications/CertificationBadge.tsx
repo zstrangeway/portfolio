@@ -19,7 +19,16 @@ const CertificationBadge = ({ cert }: CertificationBadgeProps): JSX.Element => {
       target="_blank"
       rel="noreferrer"
     >
-      <img className={styles.certifications_badge_image} src={cert.imageUrl} />
+      {/* <img className={styles.certifications_badge_image} src={cert.imageUrl} /> */}
+      <picture>
+        <source srcSet={`${cert.imageUrl}.webp`} />
+        <source srcSet={`${cert.imageUrl}.png`} />
+        <img
+          className={styles.certifications_badge_image}
+          src={`${cert.imageUrl}.png`}
+          alt={cert.name}
+        />
+      </picture>
     </a>
   );
 };
