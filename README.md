@@ -27,7 +27,7 @@ My online resume and portfolio.
 - Add footer?
 - Add 404 page
 - Fix mobile nav flash on page load
+- Add icon links to mobile nav
   
 - House Keeping
-  - Create CI/CD Pipeline
   - Set FROM and TO emails by parameter in SAM template

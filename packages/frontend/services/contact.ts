@@ -1,8 +1,10 @@
 import { Contact } from "../types";
 
+const api_url = `https://${process.env.NEXT_PUBLIC_API_URL}`;
+
 export default class ContactService {
   sendContactForm = async (contact: Contact): Promise<Contact> => {
-    const url = "https://dev-api.zacstrangeway.com/contact";
+    const url = `${api_url}/contact`;
 
     const res = await fetch(url, {
       method: "POST",

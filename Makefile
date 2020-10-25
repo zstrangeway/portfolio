@@ -11,7 +11,7 @@ APP_NAME:=portfolio
 DOMAIN:=zacstrangeway.com
 GITHUB_OWNER:=zstrangeway
 GITHUB_REPO:=portfolio
-GITHUB_BRANCH:=master # TODO: change to develop for dev
+GITHUB_BRANCH:=develop
 PROFILE:=za_zac
 DISTRIBUTION_ID:=E113VJOGL4F6CC
 
@@ -116,3 +116,27 @@ deploy:
 		--paths "/index.html" \
 		--output yaml-stream \
 		--profile ${PROFILE}
+
+.PHONY: deploy-pipeline
+deploy_pipeline:
+	# Create CodePipeline for dev, override STAGE=prod to create for prod
+	aws s3 mb s3://${ARTIFACT_BUCKET}
+
+	aws cloudformation deploy \
+		--template-file templates/cicd.template.yml \
+		--capabilities CAPABILITY_NAMED_IAM \
+		--stack-name ${PIPELINE} \
+		--parameter-overrides \
+			Environment=${STAGE} \
+			TargetStack=${PROJECT} \
+			GitHubOAuthToken=${GITHUB_TOKEN} \
+			GitHubOwner=${GITHUB_OWNER} \
+			GitHubRepo=${GITHUB_REPO} \
+			GitHubBranch=${GITHUB_BRANCH} \
+			DeploymentBucket=${DEPLOYMENT_BUCKET} \
+			BuildArtifactsBucket=${ARTIFACT_BUCKET} \
+			HostedZone=${DOMAIN} \
+			ApiDomainName=${API_DOMAIN} \
+			FrontendDomainName=${FRONTEND_DOMAIN} \
+			FrontendRootBucketName=${FRONT_END_BUCKET} \
+			FrontendLogBucketName=${FRONT_END_LOG_BUCKET}
