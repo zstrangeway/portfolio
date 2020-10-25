@@ -54,6 +54,12 @@ Parameters:
   FrontendLogBucketName:
     Description: S3 bucket for frontend web app logs
     Type: String
+  ContactToEmail:
+    Description: Email address that receives contact form notifications
+    Type: String
+  ContactFromEmail:
+    Description: Email address that sends contact form notifications
+    Type: String
 
 ###############################################################################
 Resources:
@@ -154,7 +160,9 @@ Resources:
                     "ApiDomainName": "${ApiDomainName}", 
                     "FrontendDomainName": "${FrontendDomainName}", 
                     "FrontendRootBucketName": "${FrontendRootBucketName}", 
-                    "FrontendLogBucketName": "${FrontendLogBucketName}"
+                    "FrontendLogBucketName": "${FrontendLogBucketName}",
+                    "ContactToEmail": "${ContactToEmail}", 
+                    "ContactFromEmail": "${ContactFromEmail}"
                   }
                 Capabilities: CAPABILITY_IAM,CAPABILITY_AUTO_EXPAND
               InputArtifacts:

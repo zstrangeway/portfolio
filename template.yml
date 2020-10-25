@@ -27,6 +27,12 @@ Parameters:
   FrontendLogBucketName:
     Description: S3 bucket for frontend web app logs
     Type: String
+  ContactToEmail:
+    Description: Email address that receives contact form notifications
+    Type: String
+  ContactFromEmail:
+    Description: Email address that sends contact form notifications
+    Type: String
 
 ###############################################################################
 Resources:
@@ -104,8 +110,8 @@ Resources:
               Ref: API
       Environment:
         Variables:
-          TO_EMAIL: zac.strangeway@gmail.com # TODO: set email via parameter
-          FROM_EMAIL: zac.strangeway@gmail.com # TODO: set email via parameter
+          TO_EMAIL: !Ref ContactToEmail
+          FROM_EMAIL: !Ref ContactFromEmail
       Tags:
         Environment: !Ref Environment
         Service: Contact

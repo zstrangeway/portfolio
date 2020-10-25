@@ -14,6 +14,8 @@ GITHUB_REPO:=portfolio
 GITHUB_BRANCH:=develop
 PROFILE:=za_zac
 DISTRIBUTION_ID:=E113VJOGL4F6CC
+TO_EMAIL:=zac.strangeway@gmail.com
+FROM_EMAIL:=zac.strangeway@gmail.com
 
 # Stack names
 PROJECT:=${STAGE}-${APP_NAME}
@@ -97,7 +99,9 @@ deploy:
 			ApiDomainName=${API_DOMAIN} \
 			FrontendDomainName=${FRONTEND_DOMAIN} \
 			FrontendRootBucketName=${FRONT_END_BUCKET} \
-			FrontendLogBucketName=${FRONT_END_LOG_BUCKET}
+			FrontendLogBucketName=${FRONT_END_LOG_BUCKET} \
+			ContactToEmail=${TO_EMAIL} \
+			ContactFromEmail=${FROM_EMAIL}
 
 	# deploy web applications to S3
 	aws s3 sync \
@@ -139,4 +143,6 @@ deploy_pipeline:
 			ApiDomainName=${API_DOMAIN} \
 			FrontendDomainName=${FRONTEND_DOMAIN} \
 			FrontendRootBucketName=${FRONT_END_BUCKET} \
-			FrontendLogBucketName=${FRONT_END_LOG_BUCKET}
+			FrontendLogBucketName=${FRONT_END_LOG_BUCKET} \
+			ContactToEmail=${TO_EMAIL} \
+			ContactFromEmail=${FROM_EMAIL}
