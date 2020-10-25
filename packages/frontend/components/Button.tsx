@@ -12,6 +12,8 @@ type ButtonProps = {
   onClick?:
     | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
     | undefined;
+  icon?: JSX.Element;
+  iconLocation?: "left" | "right";
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,13 +22,20 @@ const Button: React.FC<ButtonProps> = ({
   className,
   type,
   loading,
+  icon,
+  iconLocation = "left",
 }: ButtonProps) => (
   <button
-    className={cx(className, { button: true })}
+    className={cx(className, {
+      button: true,
+      icon_left: iconLocation === "left",
+      icon_right: iconLocation === "right",
+    })}
     onClick={onClick}
     type={type}
     disabled={loading}
   >
+    {iconLocation === "left" && icon}
     <span
       className={cx({
         button_text: true,
@@ -35,6 +44,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       {children}
     </span>
+    {iconLocation === "right" && icon}
     <div
       className={cx({
         button_loader_wrapper: true,

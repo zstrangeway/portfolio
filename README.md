@@ -23,8 +23,6 @@ My online resume and portfolio.
 # Backlog
 - Add transitions when selecting work history items
 - Create models layer for type consistency?
-- Resume button download icon?
-- Add footer?
 - Fix mobile nav flash on page load
 - Add icon links to mobile nav
 - Set up logging

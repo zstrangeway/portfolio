@@ -1,6 +1,7 @@
 @import "_base";
 
 .button {
+  display: flex;
   position: relative;
   font-size: 1rem;
   padding: 0.25em 1.5em;
@@ -31,6 +32,25 @@
 
     &.loading {
       opacity: 0;
+    }
+  }
+
+  svg {
+    display: block;
+    height: 1em;
+    width: 1em;
+    fill: $secondary-background;
+  }
+
+  &.icon_left {
+    svg {
+      transform: translateX(-0.5em);
+    }
+  }
+
+  &.icon_right {
+    svg {
+      transform: translateX(0.5em);
     }
   }
 

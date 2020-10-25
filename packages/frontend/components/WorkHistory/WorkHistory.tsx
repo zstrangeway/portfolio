@@ -6,6 +6,7 @@ import styles from "../../styles/WorkHistory.module.scss";
 import Button from "../Button";
 import useTween from "../../hooks/useTween";
 import classNames from "classnames/bind";
+import ExternalLink from "../Icons/ExternalLink";
 
 const cx = classNames.bind(styles);
 
@@ -56,7 +57,9 @@ const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
           target="_blank"
           rel="no-referrer"
         >
-          <Button>Resume</Button>
+          <Button icon={<ExternalLink />} iconLocation={"right"}>
+            Resume
+          </Button>
         </a>
       </div>
     </section>
