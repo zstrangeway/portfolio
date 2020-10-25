@@ -14,7 +14,7 @@ const Hero = ({ id }: HeroProps): JSX.Element => {
             <br />
             Strangeway
           </h1>
-          <h2 className={styles.hero_sub_title}>Senior Software Engineer</h2>
+          <h2 className={styles.hero_sub_title}>Software Engineer</h2>
         </div>
       </div>
     </section>

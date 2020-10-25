@@ -22,11 +22,11 @@ My online resume and portfolio.
 
 # Backlog
 - Add transitions when selecting work history items
-- Decide on fonts
-  - Update hero image with new fonts
 - Create models layer for type consistency?
 - Resume button download icon?
 - Add footer?
+- Add 404 page
+- Fix mobile nav flash on page load
   
 - House Keeping
   - Create CI/CD Pipeline
