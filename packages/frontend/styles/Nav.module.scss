@@ -14,7 +14,7 @@ $inset: 3em - ($dot_size / 2);
   
     &.active {
       .nav_item_wrapper {
-        transform: translateX(0);
+        transform: translateX(100vw);
       }
     }
   
@@ -26,7 +26,7 @@ $inset: 3em - ($dot_size / 2);
       display: flex;
       position: fixed;
       top: 0;
-      left: 0;
+      left: -100vw;
       height: 100vh;
       width: 100vw;
       flex-direction: column;
@@ -36,7 +36,7 @@ $inset: 3em - ($dot_size / 2);
       justify-content: center;
       background: $secondary;
       transition: transform 0.25s ease-in-out;
-      transform: translateX(-100%);
+      transform: translateX(0);
 
       .nav_item {
         margin-bottom: 0.5em;
