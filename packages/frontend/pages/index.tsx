@@ -7,6 +7,7 @@ import Links from "../components/Links";
 import Nav from "../components/Nav/Nav";
 import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills";
+import Footer from "../components/Footer";
 import { Section } from "../types";
 
 const Home = (): JSX.Element => {
@@ -19,6 +20,7 @@ const Home = (): JSX.Element => {
       <Education id="education" />
       <Projects id="projects" />
       <Contact id="contact" />
+      <Footer />
       <Nav sections={sections} />
       <Links />
     </>
