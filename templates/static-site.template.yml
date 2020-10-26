@@ -46,6 +46,16 @@ Resources:
       DistributionConfig:
         Aliases:
           - !Ref DomainName
+        CacheBehaviors: 
+          - PathPattern: "index.html"
+            Compress: true
+            DefaultTTL: 1
+            MinTTL: 1
+            MaxTTL: 1
+            ForwardedValues:
+              QueryString: false
+            TargetOriginId: the-s3-bucket
+            ViewerProtocolPolicy: redirect-to-https
         DefaultCacheBehavior:
           Compress: true
           ForwardedValues:

@@ -25,3 +25,8 @@ artifacts:
         - '**/*'
       base-directory: $CODEBUILD_SRC_DIR/dist/frontend
       discard-paths: no
+    FrontEndIndexArtifact:
+      files:
+        - 'index.html'
+      base-directory: $CODEBUILD_SRC_DIR/dist/frontend
+      discard-paths: no

@@ -136,6 +136,7 @@ Resources:
               OutputArtifacts:
                 - Name: BuildArtifact
                 - Name: FrontEndArtifact
+                - Name: FrontEndIndexArtifact
               Configuration:
                 ProjectName: !Ref CodeBuildProject
               RunOrder: 1
@@ -179,8 +180,6 @@ Resources:
                 RoleArn: !GetAtt CloudFormationExecutionRole.Arn
                 StackName: !Sub ${TargetStack}
                 ChangeSetName: !Sub ${TargetStack}-change-set
-              # OutputArtifacts:
-              #   - Name: {{cookiecutter.project_name.lower().replace(' ', '-')}}GammaChangeSet
               RunOrder: 2
             - Name: DeployFrontend
               ActionTypeId:
@@ -193,7 +192,21 @@ Resources:
               Configuration:
                 BucketName: !Ref FrontendRootBucketName
                 Extract: 'true'
+                CacheControl: max-age=31536000
               RunOrder: 3
+            - Name: DeployFrontendIndex
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: S3
+                Version: '1'
+              InputArtifacts:
+                - Name: FrontEndIndexArtifact
+              Configuration:
+                BucketName: !Ref FrontendRootBucketName
+                Extract: 'true'
+                CacheControl: max-age=1
+              RunOrder: 4
 
   GithubWebhook:
     Type: 'AWS::CodePipeline::Webhook'
