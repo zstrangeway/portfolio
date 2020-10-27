@@ -7,7 +7,7 @@ phases:
 
   pre_build:
     commands:
-      - npm run install-dependencies
+      - npm i
 
   build:
     commands:

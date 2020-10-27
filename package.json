@@ -9,7 +9,6 @@
     "lint:fix": "npm run lint -- --fix",
     "dev": "lerna run dev",
     "dev:kill": "pkill -f lerna",
-    "install-dependencies": "npm i && lerna run install-dependencies",
     "svgr": "lerna run svgr"
   },
   "repository": {
