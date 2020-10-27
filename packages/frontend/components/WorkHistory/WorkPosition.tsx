@@ -9,7 +9,7 @@ const WorkPosition = ({ position }: WorkPositionProps): JSX.Element => {
   return (
     <div className={styles.work_position}>
       <div>
-        <h4>{position.title}</h4>
+        <h3 className={styles.work_position_title}>{position.title}</h3>
         <p>{position.location}</p>
         <p>
           {position.start} - {position.end}

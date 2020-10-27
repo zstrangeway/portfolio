@@ -27,6 +27,8 @@ const CertificationBadge = ({ cert }: CertificationBadgeProps): JSX.Element => {
           className={styles.certifications_badge_image}
           src={`${cert.imageUrl}.png`}
           alt={cert.name}
+          height="200"
+          width="200"
         />
       </picture>
     </a>

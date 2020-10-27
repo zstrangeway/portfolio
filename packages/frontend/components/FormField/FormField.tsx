@@ -26,8 +26,10 @@ const FormField = ({
 }: FormFieldProps): JSX.Element => {
   return (
     <div className={styles.form_field}>
+      <label htmlFor={name}>{placeholder}</label>
       {type === "text" && (
         <input
+          id={name}
           className={styles.form_field_text}
           type="text"
           name={name}
@@ -41,6 +43,7 @@ const FormField = ({
       )}
       {type === "textarea" && (
         <textarea
+          id={name}
           className={styles.form_field_textarea}
           name={name}
           placeholder={placeholder}

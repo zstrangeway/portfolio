@@ -6,6 +6,7 @@ import GooglePlay from "../Icons/GooglePlay";
 import styles from "../../styles/Projects.module.scss";
 import { useRef } from "react";
 import useTween from "../../hooks/useTween";
+import ProjectItemLink from "./ProjectItemLink";
 
 type ProjectItemProps = {
   project: Project;
@@ -31,32 +32,32 @@ const ProjectItem = ({ project }: ProjectItemProps): JSX.Element => {
       </ul>
       <div className={styles.project_item_link_wrapper}>
         {project.url ? (
-          <div className={styles.project_item_link}>
-            <a href={project.url} target="_blank" rel="noreferrer">
-              <ExternalLink />
-            </a>
-          </div>
+          <ProjectItemLink
+            url={project.url}
+            alt={project.title}
+            icon={<ExternalLink />}
+          />
         ) : null}
         {project.githubUrl ? (
-          <div className={styles.project_item_link}>
-            <a href={project.githubUrl} target="_blank" rel="noreferrer">
-              <Github />
-            </a>
-          </div>
+          <ProjectItemLink
+            url={project.githubUrl}
+            alt={`${project.title} Github Repo`}
+            icon={<Github />}
+          />
         ) : null}
         {project.appleAppStoreUrl ? (
-          <div className={styles.project_item_link}>
-            <a href={project.appleAppStoreUrl} target="_blank" rel="noreferrer">
-              <AppleAppStore />
-            </a>
-          </div>
+          <ProjectItemLink
+            url={project.appleAppStoreUrl}
+            alt={`${project.title} Apple App Store`}
+            icon={<AppleAppStore />}
+          />
         ) : null}
         {project.googlePlayUrl ? (
-          <div className={styles.project_item_link}>
-            <a href={project.googlePlayUrl} target="_blank" rel="noreferrer">
-              <GooglePlay />
-            </a>
-          </div>
+          <ProjectItemLink
+            url={project.googlePlayUrl}
+            alt={`${project.title} Google Play Store`}
+            icon={<GooglePlay />}
+          />
         ) : null}
       </div>
     </div>
