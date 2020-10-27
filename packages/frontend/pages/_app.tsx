@@ -16,10 +16,11 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <main>
       <Head>
-        {/* Fonts */}
+        {/* Start fetching fonts */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:wght@700&display=swap"
-          rel="stylesheet"
+          rel="preconnect"
+          href="https://fonts.gstatic.com/"
+          crossOrigin="anonymous"
         />
 
         {/* The usual meta tags */}
