@@ -12,6 +12,7 @@ export type Contact = {
 };
 
 export type HistoryItem = {
+  id: number;
   employer: string;
   positions: Position[];
 };

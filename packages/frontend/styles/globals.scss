@@ -27,3 +27,36 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.fade-exit {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+
+  &.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms linear;
+  }
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+
+  &.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms linear 300ms;
+  }
+}
+
+.fade-appear {
+  opacity: 0;
+
+  &.fade-appear-active {
+    opacity: 1;
+    transition: opacity 300ms linear;
+  }
+}

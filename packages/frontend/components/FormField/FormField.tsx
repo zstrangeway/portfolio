@@ -26,7 +26,9 @@ const FormField = ({
 }: FormFieldProps): JSX.Element => {
   return (
     <div className={styles.form_field}>
-      <label htmlFor={name}>{placeholder}</label>
+      <label htmlFor={name} className={styles.form_field_label}>
+        {placeholder}
+      </label>
       {type === "text" && (
         <input
           id={name}

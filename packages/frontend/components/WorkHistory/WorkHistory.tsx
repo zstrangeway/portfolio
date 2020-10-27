@@ -1,12 +1,13 @@
 import { useRef, useState } from "react";
 import { HistoryItem } from "../../types";
 import Arrow from "../icons/Arrow";
-import WorkPosition from "./WorkPosition";
+import WorkHistoryPositions from "./WorkHistoryPositions";
 import styles from "../../styles/WorkHistory.module.scss";
 import Button from "../Button";
 import useTween from "../../hooks/useTween";
 import classNames from "classnames/bind";
 import ExternalLink from "../Icons/ExternalLink";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const cx = classNames.bind(styles);
 
@@ -16,6 +17,7 @@ type WorkHistoryProps = {
 
 const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
   const [selectedItem, setItem] = useState(workHistory[0]);
+
   const ref = useRef();
   useTween(ref, "fadeIn");
 
@@ -45,11 +47,18 @@ const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
               );
             })}
           </ul>
-          <div className={styles.work_history_details}>
-            {selectedItem.positions.map((position) => {
-              return <WorkPosition key={position.title} position={position} />;
-            })}
-          </div>
+          <TransitionGroup className={styles.work_history_details}>
+            <CSSTransition
+              key={selectedItem.id}
+              in={true}
+              appear={true}
+              unmountOnExit
+              timeout={600}
+              classNames="fade"
+            >
+              <WorkHistoryPositions positions={selectedItem.positions} />
+            </CSSTransition>
+          </TransitionGroup>
         </div>
         <a
           className={styles.work_history_resume_link}
@@ -70,6 +79,7 @@ export default WorkHistory;
 
 const workHistory: HistoryItem[] = [
   {
+    id: 1,
     employer: "TASC",
     positions: [
       {
@@ -88,6 +98,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
+    id: 2,
     employer: "Gravy",
     positions: [
       {
@@ -105,6 +116,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
+    id: 3,
     employer: "Greenleaf",
     positions: [
       {
@@ -126,6 +138,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
+    id: 4,
     employer: "WOCCU",
     positions: [
       {
@@ -140,6 +153,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
+    id: 5,
     employer: "Ratelinx",
     positions: [
       {
@@ -156,6 +170,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
+    id: 6,
     employer: "Suttle-Straus",
     positions: [
       {
@@ -177,6 +192,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
+    id: 7,
     employer: "TDS",
     positions: [
       {

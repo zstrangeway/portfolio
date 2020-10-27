@@ -118,19 +118,21 @@
         }
   
         .work_history_details {
+          position: relative;
           margin-left: 3em;
+          overflow: hidden;
         }
       }
     }
   }
 }
 
-.work_position {
+.work_history_positions {
   li {
     margin-bottom: 0.5em;
   }
 
-  .work_position_title {
+  .work_history_positions_title {
     font-size: 1.1rem;
   }
 }
