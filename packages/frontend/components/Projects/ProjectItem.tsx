@@ -17,7 +17,7 @@ const ProjectItem = ({ project }: ProjectItemProps): JSX.Element => {
 
   return (
     <div ref={ref} className={styles.project_item}>
-      <h4 className={styles.project_item_title}>{project.title}</h4>
+      <h3 className={styles.project_item_title}>{project.title}</h3>
       <p className={styles.project_item_description}>{project.description}</p>
       <div className={styles.project_item_spacer}></div>
       <ul className={styles.project_item_tech_list}>
