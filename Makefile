@@ -68,7 +68,6 @@ build:
 	mkdir ${BUILD_DIR}
 
 	# compile typescript packages
-	rm -rf ./dist
 	npm run build
 
 	# generate cloudformation templates
