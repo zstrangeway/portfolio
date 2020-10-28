@@ -1,17 +1,13 @@
 import { useState } from "react";
-import { Section } from "../../types";
 import styles from "../../styles/Nav.module.scss";
 import NavItem from "./NavItem";
 import classNames from "classnames/bind";
 import NavToggle from "./NavToggle";
+import { sections } from "../../data";
 
 const cx = classNames.bind(styles);
 
-type NavProps = {
-  sections: Section[];
-};
-
-const Nav = ({ sections }: NavProps): JSX.Element => {
+const Nav = (): JSX.Element => {
   const [active, setActive] = useState(false);
 
   const handleToggle = () => {

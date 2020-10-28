@@ -1,6 +1,6 @@
-import { Certification } from "../../types";
 import CertificationBadge from "./CertificationBadge";
 import styles from "../../styles/Certifications.module.scss";
+import { certifications } from "../../data";
 
 type CertificationsProps = {
   id: string;
@@ -12,8 +12,13 @@ const Certifications = ({ id }: CertificationsProps): JSX.Element => {
       <div className={styles.certifications_container}>
         <h2 className={styles.certifications_title}>Certifications</h2>
         <div className={styles.certifications_badge_wrapper}>
-          {certs.map((cert) => {
-            return <CertificationBadge key={cert.name} cert={cert} />;
+          {certifications.map((certification) => {
+            return (
+              <CertificationBadge
+                key={certification.name}
+                certification={certification}
+              />
+            );
           })}
         </div>
       </div>
@@ -22,18 +27,3 @@ const Certifications = ({ id }: CertificationsProps): JSX.Element => {
 };
 
 export default Certifications;
-
-const certs: Certification[] = [
-  {
-    name: "AWS Certified Cloud Practitioner",
-    imageUrl: "images/aws-certified-cloud-practitioner",
-    link:
-      "https://www.youracclaim.com/badges/02a7a323-6e22-4d67-82a8-480420124bc2/public_url",
-  },
-  {
-    name: "AWS Certified Solutions Architect Associate",
-    imageUrl: "images/aws-certified-solutions-architect-associate",
-    link:
-      "https://www.youracclaim.com/badges/42ac440f-f2fb-4a77-b7a9-9679709ee9b1/public_url",
-  },
-];

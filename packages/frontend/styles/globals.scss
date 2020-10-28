@@ -35,7 +35,7 @@ a {
 
   &.fade-exit-active {
     opacity: 0;
-    transition: opacity 300ms linear;
+    transition: opacity 300ms ease-out;
   }
 }
 
@@ -48,7 +48,7 @@ a {
 
   &.fade-enter-active {
     opacity: 1;
-    transition: opacity 300ms linear 300ms;
+    transition: opacity 300ms ease-in 300ms;
   }
 }
 
@@ -57,6 +57,6 @@ a {
 
   &.fade-appear-active {
     opacity: 1;
-    transition: opacity 300ms linear;
+    transition: opacity 300ms ease-in;
   }
 }

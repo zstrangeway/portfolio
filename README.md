@@ -21,7 +21,7 @@ My online resume and portfolio.
   - SES
 
 # Backlog
-- Add transitions when selecting work history items
 - Create models layer for type consistency?
 - Add icon links to mobile nav
 - Set up logging
+- Add google analytics

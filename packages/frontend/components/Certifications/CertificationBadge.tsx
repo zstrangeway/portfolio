@@ -4,10 +4,12 @@ import { useRef } from "react";
 import useTween from "../../hooks/useTween";
 
 type CertificationBadgeProps = {
-  cert: Certification;
+  certification: Certification;
 };
 
-const CertificationBadge = ({ cert }: CertificationBadgeProps): JSX.Element => {
+const CertificationBadge = ({
+  certification,
+}: CertificationBadgeProps): JSX.Element => {
   const ref = useRef();
   useTween(ref, "fadeIn");
 
@@ -15,18 +17,18 @@ const CertificationBadge = ({ cert }: CertificationBadgeProps): JSX.Element => {
     <a
       ref={ref}
       className={styles.certifications_badge}
-      href={cert.link}
+      href={certification.link}
       target="_blank"
       rel="noreferrer"
     >
       {/* <img className={styles.certifications_badge_image} src={cert.imageUrl} /> */}
       <picture>
-        <source srcSet={`${cert.imageUrl}.webp`} />
-        <source srcSet={`${cert.imageUrl}.png`} />
+        <source srcSet={`${certification.imageUrl}.webp`} />
+        <source srcSet={`${certification.imageUrl}.png`} />
         <img
           className={styles.certifications_badge_image}
-          src={`${cert.imageUrl}.png`}
-          alt={cert.name}
+          src={`${certification.imageUrl}.png`}
+          alt={certification.name}
           height="200"
           width="200"
         />
