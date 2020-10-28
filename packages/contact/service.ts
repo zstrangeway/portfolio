@@ -1,12 +1,8 @@
-import {
-  APIGatewayProxyEvent,
-  APIGatewayProxyResult,
-  Context,
-} from "aws-lambda";
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import { ErrorResponse, SuccessResponse } from "./helpers/Response";
 import { SES } from "aws-sdk";
 import { SendEmailRequest } from "aws-sdk/clients/ses";
 import { checkParams } from "./helpers/checkParams";
-import { ErrorResponse, SuccessResponse } from "./helpers/Response";
 
 export default class ContactService {
   ses: SES;
@@ -16,8 +12,7 @@ export default class ContactService {
   }
 
   addContact = async (
-    event: APIGatewayProxyEvent,
-    context: Context
+    event: APIGatewayProxyEvent
   ): Promise<APIGatewayProxyResult> => {
     if (!event.body)
       return new ErrorResponse(400, "Error: Request missing body.");

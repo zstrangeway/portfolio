@@ -1,4 +1,4 @@
-import { Contact } from "../types";
+import { Contact } from "~/models";
 
 const api_url = `https://${process.env.NEXT_PUBLIC_API_URL}`;
 

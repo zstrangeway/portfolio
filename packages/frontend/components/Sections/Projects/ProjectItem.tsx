@@ -1,12 +1,14 @@
-import { Project } from "../../types";
-import AppleAppStore from "../Icons/AppleAppStore";
-import ExternalLink from "../Icons/ExternalLink";
-import Github from "../Icons/Github";
-import GooglePlay from "../Icons/GooglePlay";
-import styles from "../../styles/Projects.module.scss";
+import {
+  AppleAppStoreIcon,
+  ExternalLinkIcon,
+  GithubIcon,
+  GooglePlayIcon,
+  ProjectItemLink,
+} from "~/components";
+import { Project } from "~/models";
+import { ProjectsStyles as styles } from "~/styles";
 import { useRef } from "react";
-import useTween from "../../hooks/useTween";
-import ProjectItemLink from "./ProjectItemLink";
+import { useTween } from "~/hooks";
 
 type ProjectItemProps = {
   project: Project;
@@ -35,28 +37,28 @@ const ProjectItem = ({ project }: ProjectItemProps): JSX.Element => {
           <ProjectItemLink
             url={project.url}
             alt={project.title}
-            icon={<ExternalLink />}
+            icon={<ExternalLinkIcon />}
           />
         ) : null}
         {project.githubUrl ? (
           <ProjectItemLink
             url={project.githubUrl}
             alt={`${project.title} Github Repo`}
-            icon={<Github />}
+            icon={<GithubIcon />}
           />
         ) : null}
         {project.appleAppStoreUrl ? (
           <ProjectItemLink
             url={project.appleAppStoreUrl}
             alt={`${project.title} Apple App Store`}
-            icon={<AppleAppStore />}
+            icon={<AppleAppStoreIcon />}
           />
         ) : null}
         {project.googlePlayUrl ? (
           <ProjectItemLink
             url={project.googlePlayUrl}
             alt={`${project.title} Google Play Store`}
-            icon={<GooglePlay />}
+            icon={<GooglePlayIcon />}
           />
         ) : null}
       </div>

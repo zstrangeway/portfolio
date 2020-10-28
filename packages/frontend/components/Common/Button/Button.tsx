@@ -1,6 +1,6 @@
-import Loader from "./Loader";
-import styles from "../styles/Button.module.scss";
+import { ButtonLoader } from "~/components";
 import classNames from "classnames/bind";
+import { ButtonStyles as styles } from "~/styles";
 
 const cx = classNames.bind(styles);
 
@@ -51,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
         loading,
       })}
     >
-      <Loader />
+      <ButtonLoader />
     </div>
   </button>
 );

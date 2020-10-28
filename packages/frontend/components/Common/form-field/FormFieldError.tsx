@@ -1,6 +1,6 @@
-import Warning from "../Icons/Warning";
-import styles from "../../styles/FormField.module.scss";
+import { WarningIcon } from "~/components";
 import classNames from "classnames/bind";
+import { FormFieldStyles as styles } from "~/styles";
 
 const cx = classNames.bind(styles);
 
@@ -17,7 +17,7 @@ const FormFieldError = ({ message }: FormErrorProps): JSX.Element => {
       })}
     >
       <p className={styles.form_error_message}>
-        <Warning />
+        <WarningIcon />
         {message}
       </p>
     </div>

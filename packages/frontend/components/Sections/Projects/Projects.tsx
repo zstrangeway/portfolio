@@ -1,6 +1,6 @@
-import { projects } from "../../data";
-import ProjectItem from "./ProjectItem";
-import styles from "../../styles/Projects.module.scss";
+import { ProjectItem } from "~/components";
+import { projects } from "~/data";
+import { ProjectsStyles as styles } from "~/styles";
 
 type ProjectsProps = {
   id: string;

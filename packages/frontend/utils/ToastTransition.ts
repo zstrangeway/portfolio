@@ -1,5 +1,5 @@
 import { cssTransition } from "react-toastify";
-import styles from "../styles/ToastTransition.module.scss";
+import styles from "~/styles/ToastTransition.module.scss";
 
 const ToastTransition = cssTransition({
   enter: styles.toastAnimationIn,

@@ -1,7 +1,7 @@
-import { Certification } from "../../types";
-import styles from "../../styles/Certifications.module.scss";
+import { Certification } from "~/models";
+import { CertificationsStyles as styles } from "~/styles";
 import { useRef } from "react";
-import useTween from "../../hooks/useTween";
+import { useTween } from "~/hooks";
 
 type CertificationBadgeProps = {
   certification: Certification;

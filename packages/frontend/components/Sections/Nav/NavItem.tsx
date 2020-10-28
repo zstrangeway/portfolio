@@ -1,7 +1,7 @@
-import useNavItemActive from "../../hooks/useNavItemActive";
-import { Section } from "../../types";
-import styles from "../../styles/Nav.module.scss";
+import { Section } from "~/models";
 import classNames from "classnames/bind";
+import { NavStyles as styles } from "~/styles";
+import { useNavItemActive } from "~/hooks";
 
 const cx = classNames.bind(styles);
 

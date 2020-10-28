@@ -1,7 +1,7 @@
-import { AppProps } from "next/app";
-import "../styles/globals.scss";
-import Head from "next/head";
+import "~/styles/globals.scss";
 import "react-toastify/dist/ReactToastify.css";
+import { AppProps } from "next/app";
+import Head from "next/head";
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const title = "Zachary Strangeway - Software Engineer";

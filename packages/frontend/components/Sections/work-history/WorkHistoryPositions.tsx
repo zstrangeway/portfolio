@@ -1,5 +1,5 @@
-import { Position } from "../../types";
-import styles from "../../styles/WorkHistory.module.scss";
+import { Position } from "~/models";
+import { WorkHistoryStyles as styles } from "~/styles";
 
 type WorkPositionProps = {
   positions: Position[];

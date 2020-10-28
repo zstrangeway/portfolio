@@ -1,4 +1,4 @@
-import styles from "../styles/Hero.module.scss";
+import { HeroStyles as styles } from "~/styles";
 
 type HeroProps = {
   id: string;

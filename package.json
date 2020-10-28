@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "lerna run build && lerna run export",
-    "lint": "eslint . --ext .ts packages",
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
     "dev": "lerna run dev",
     "dev:kill": "pkill -f lerna",

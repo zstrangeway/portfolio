@@ -1,13 +1,15 @@
-import { useRef, useState } from "react";
-import Arrow from "../icons/Arrow";
-import WorkHistoryPositions from "./WorkHistoryPositions";
-import styles from "../../styles/WorkHistory.module.scss";
-import Button from "../Button";
-import useTween from "../../hooks/useTween";
-import classNames from "classnames/bind";
-import ExternalLink from "../Icons/ExternalLink";
+import {
+  ArrowIcon,
+  Button,
+  ExternalLinkIcon,
+  WorkHistoryPositions,
+} from "~/components";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { workHistory } from "../../data";
+import { useRef, useState } from "react";
+import classNames from "classnames/bind";
+import { WorkHistoryStyles as styles } from "~/styles";
+import { useTween } from "~/hooks";
+import { workHistory } from "~/data";
 
 const cx = classNames.bind(styles);
 
@@ -37,7 +39,7 @@ const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
                   })}
                   onClick={() => setItem(historyItem)}
                 >
-                  <Arrow
+                  <ArrowIcon
                     className={styles.work_history_employer_list_item_arrow}
                   />
                   <div className={styles.work_history_employer_list_item_text}>
@@ -66,7 +68,7 @@ const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
           target="_blank"
           rel="no-referrer"
         >
-          <Button icon={<ExternalLink />} iconLocation={"right"}>
+          <Button icon={<ExternalLinkIcon />} iconLocation={"right"}>
             Resume
           </Button>
         </a>

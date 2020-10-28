@@ -1,13 +1,15 @@
-import Certifications from "../components/Certifications/Certifications";
-import Contact from "../components/ContactForm";
-import Education from "../components/Education";
-import WorkHistory from "../components/WorkHistory/WorkHistory";
-import Hero from "../components/Hero";
-import Links from "../components/Links";
-import Nav from "../components/Nav/Nav";
-import Projects from "../components/Projects/Projects";
-import Skills from "../components/Skills";
-import Footer from "../components/Footer";
+import {
+  Certifications,
+  ContactForm,
+  Education,
+  Footer,
+  Hero,
+  Links,
+  Nav,
+  Projects,
+  Skills,
+  WorkHistory,
+} from "~/components";
 
 const Home = (): JSX.Element => {
   return (
@@ -18,7 +20,7 @@ const Home = (): JSX.Element => {
       <WorkHistory id="workHistory" />
       <Education id="education" />
       <Projects id="projects" />
-      <Contact id="contact" />
+      <ContactForm id="contact" />
       <Footer />
       <Nav />
       <Links />

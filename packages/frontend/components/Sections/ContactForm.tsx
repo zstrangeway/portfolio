@@ -1,13 +1,12 @@
-import Button from "./Button";
-import styles from "../styles/ContactForm.module.scss";
+import { Button, FormField } from "~/components";
+import { Controller, UnpackNestedValue, useForm } from "react-hook-form";
 import { useRef, useState } from "react";
-import useTween from "../hooks/useTween";
-import ContactService from "../services/contact";
+import { Contact } from "~/models";
+import { ContactService } from "~/services";
+import { ToastTransition } from "~/utils";
+import { ContactFormStyles as styles } from "~/styles";
 import { toast } from "react-toastify";
-import ToastTransition from "../utils/ToastTransition";
-import { Contact } from "../types";
-import { useForm, Controller, UnpackNestedValue } from "react-hook-form";
-import FormField from "./FormField/FormField";
+import { useTween } from "~/hooks";
 
 type ContactProps = {
   id: string;

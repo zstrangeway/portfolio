@@ -1,5 +1,5 @@
-import FormFieldError from "./FormFieldError";
-import styles from "../../styles/FormField.module.scss";
+import { FormFieldError } from "~/components";
+import { FormFieldStyles as styles } from "~/styles";
 
 type FormFieldProps = {
   name: string;

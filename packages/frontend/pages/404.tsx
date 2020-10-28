@@ -1,4 +1,4 @@
-import styles from "../styles/404.module.scss";
+import { ErrorPageStyles as styles } from "~/styles";
 
 const Custom404 = (): JSX.Element => {
   return (

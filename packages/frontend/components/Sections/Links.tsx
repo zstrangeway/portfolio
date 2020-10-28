@@ -1,8 +1,5 @@
-import Email from "./Icons/Email";
-import Github from "./Icons/Github";
-import Linkedin from "./Icons/Linkedin";
-import Resume from "./Icons/Resume";
-import styles from "../styles/Links.module.scss";
+import { EmailIcon, GithubIcon, LinkedinIcon, ResumeIcon } from "~/components";
+import { LinksStyles as styles } from "~/styles";
 
 const Links = (): JSX.Element => {
   return (
@@ -15,7 +12,7 @@ const Links = (): JSX.Element => {
         target="_blank"
         rel="noreferrer"
       >
-        <Linkedin />
+        <LinkedinIcon />
       </a>
       <a
         className={styles.links_link}
@@ -24,7 +21,7 @@ const Links = (): JSX.Element => {
         target="_blank"
         rel="noreferrer"
       >
-        <Github />
+        <GithubIcon />
       </a>
       <a
         className={styles.links_link}
@@ -33,7 +30,7 @@ const Links = (): JSX.Element => {
         target="_blank"
         rel="noreferrer"
       >
-        <Email />
+        <EmailIcon />
       </a>
       <a
         className={styles.links_link}
@@ -42,7 +39,7 @@ const Links = (): JSX.Element => {
         target="_blank"
         rel="noreferrer"
       >
-        <Resume />
+        <ResumeIcon />
       </a>
     </div>
   );

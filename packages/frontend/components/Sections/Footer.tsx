@@ -1,4 +1,4 @@
-import styles from "../styles/Footer.module.scss";
+import { FooterStyles as styles } from "~/styles";
 
 const Footer = (): JSX.Element => {
   const date = new Date();

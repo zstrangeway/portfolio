@@ -1,9 +1,8 @@
-import { useState } from "react";
-import styles from "../../styles/Nav.module.scss";
-import NavItem from "./NavItem";
+import { NavItem, NavToggle } from "~/components";
 import classNames from "classnames/bind";
-import NavToggle from "./NavToggle";
-import { sections } from "../../data";
+import { sections } from "~/data";
+import { NavStyles as styles } from "~/styles";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 

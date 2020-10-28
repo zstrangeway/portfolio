@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run svgr && next build",
+    "build": "npm run generate-icons && next build",
     "export": "next export -o ../../dist/frontend",
     "lint": "eslint -c .eslintrc --ext .ts,.tsx .",
-    "svgr": "svgr -d components/icons/ icons/"
+    "generate-icons": "svgr -d components/Common/Icons/ icons/"
   }
 }

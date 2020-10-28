@@ -1,4 +1,4 @@
-import styles from "../../styles/Projects.module.scss";
+import { ProjectsStyles as styles } from "~/styles";
 
 type ProjectItemLinkProps = {
   url: string;

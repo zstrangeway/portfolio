@@ -1,6 +1,6 @@
+import { EducationStyles as styles } from "~/styles";
 import { useRef } from "react";
-import styles from "../styles/Education.module.scss";
-import useTween from "../hooks/useTween";
+import { useTween } from "~/hooks";
 
 type EducationProps = {
   id: string;

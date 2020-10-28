@@ -1,6 +1,6 @@
-import CertificationBadge from "./CertificationBadge";
-import styles from "../../styles/Certifications.module.scss";
-import { certifications } from "../../data";
+import { CertificationBadge } from "~/components";
+import { certifications } from "~/data";
+import { CertificationsStyles as styles } from "~/styles";
 
 type CertificationsProps = {
   id: string;

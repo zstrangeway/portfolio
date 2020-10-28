@@ -1,6 +1,6 @@
-import styles from "../styles/Skills.module.scss";
-import SkillsCard from "./SkillsCard";
-import { skillSets } from "../data";
+import { SkillsCard } from "~/components";
+import { skillSets } from "~/data";
+import { SkillsStyles as styles } from "~/styles";
 
 type SkillsProps = {
   id: string;

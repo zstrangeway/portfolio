@@ -1,7 +1,7 @@
+import { SkillSet } from "~/models";
+import { SkillsStyles as styles } from "~/styles";
 import { useRef } from "react";
-import useTween from "../hooks/useTween";
-import styles from "../styles/Skills.module.scss";
-import { SkillSet } from "../types";
+import { useTween } from "~/hooks";
 
 type SkillsCardProps = {
   skillSet: SkillSet;

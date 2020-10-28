@@ -1,5 +1,5 @@
-import { gsap } from "gsap";
 import { MutableRefObject, useEffect } from "react";
+import { gsap } from "gsap";
 
 const parallaxMultiplier = 40;
 

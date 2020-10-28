@@ -1,4 +1,4 @@
-import { SkillSet } from "../types";
+import { SkillSet } from "~/models";
 
 const skillSets: SkillSet[] = [
   {
