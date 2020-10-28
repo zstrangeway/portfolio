@@ -1,7 +1,9 @@
 import { SkillSet } from "~/models";
+import { v4 as uuidv4 } from "uuid";
 
 const skillSets: SkillSet[] = [
   {
+    id: uuidv4(),
     subject: "Web Development",
     skills: [
       "HTML5",
@@ -17,11 +19,13 @@ const skillSets: SkillSet[] = [
     height: 1,
   },
   {
+    id: uuidv4(),
     subject: "Mobile Development",
     skills: ["iOS", "Swift", "Android", "Kotlin", "MVVM", "Gradle"],
     height: 2,
   },
   {
+    id: uuidv4(),
     subject: "AWS",
     skills: [
       "Lambda",
@@ -36,11 +40,13 @@ const skillSets: SkillSet[] = [
     height: 3,
   },
   {
+    id: uuidv4(),
     subject: "General",
     skills: ["Git", "SQL"],
     height: 4,
   },
   {
+    id: uuidv4(),
     subject: "Hobbies",
     skills: ["Brewing", "Guitar", "Gaming", "Gardening"],
     height: 5,

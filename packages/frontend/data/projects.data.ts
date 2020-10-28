@@ -1,7 +1,9 @@
 import { Project } from "~/models";
+import { v4 as uuidv4 } from "uuid";
 
 const projects: Project[] = [
   {
+    id: uuidv4(),
     title: "Gravy Live",
     description:
       "A live streaming e-commerce app for iOS and Android. Created while employed by Gravy Live. Has since pivoted and rebranded to Spin Live.",
@@ -12,6 +14,7 @@ const projects: Project[] = [
       "https://play.google.com/store/apps/details?id=live.spin.android",
   },
   {
+    id: uuidv4(),
     title: "UW OCCFR Website",
     description:
       "A website for the UW-Madison Office of Childcare and Family Resources. Created while employed by Greenleaf Media.",
@@ -19,6 +22,7 @@ const projects: Project[] = [
     url: "https://occfr.wisc.edu/",
   },
   {
+    id: uuidv4(),
     title: "Jones Payne Website",
     description:
       "A website for The Jones Payne Group. Created while employed by Greenleaf Media.",
@@ -26,6 +30,7 @@ const projects: Project[] = [
     url: "https://www.jonespayne.com/",
   },
   {
+    id: uuidv4(),
     title: "Red Comet Creations",
     description:
       "A website for a small business specializing in quilting and embroidery.",
@@ -33,6 +38,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/zstrangeway/red-comet",
   },
   {
+    id: uuidv4(),
     title: "Portfolio",
     description: "My online resume and portfolio.",
     technologies: ["Next.js", "Node.js", "Typescript", "AWS", "Serverless"],

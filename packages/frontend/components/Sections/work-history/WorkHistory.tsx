@@ -32,7 +32,7 @@ const WorkHistory = ({ id }: WorkHistoryProps): JSX.Element => {
             {workHistory.map((historyItem) => {
               return (
                 <li
-                  key={historyItem.employer}
+                  key={historyItem.id}
                   className={cx({
                     work_history_employer_list_item: true,
                     selected: historyItem == selectedItem,

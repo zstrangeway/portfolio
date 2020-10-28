@@ -15,7 +15,7 @@ const Certifications = ({ id }: CertificationsProps): JSX.Element => {
           {certifications.map((certification) => {
             return (
               <CertificationBadge
-                key={certification.name}
+                key={certification.id}
                 certification={certification}
               />
             );

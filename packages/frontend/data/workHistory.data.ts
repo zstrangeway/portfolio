@@ -1,8 +1,9 @@
 import { HistoryItem } from "~/models";
+import { v4 as uuidv4 } from "uuid";
 
 const workHistory: HistoryItem[] = [
   {
-    id: 1,
+    id: uuidv4(),
     employer: "TASC",
     positions: [
       {
@@ -21,7 +22,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    id: 2,
+    id: uuidv4(),
     employer: "Gravy",
     positions: [
       {
@@ -39,7 +40,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    id: 3,
+    id: uuidv4(),
     employer: "Greenleaf",
     positions: [
       {
@@ -61,7 +62,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    id: 4,
+    id: uuidv4(),
     employer: "WOCCU",
     positions: [
       {
@@ -76,7 +77,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    id: 5,
+    id: uuidv4(),
     employer: "Ratelinx",
     positions: [
       {
@@ -93,7 +94,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    id: 6,
+    id: uuidv4(),
     employer: "Suttle-Straus",
     positions: [
       {
@@ -115,7 +116,7 @@ const workHistory: HistoryItem[] = [
     ],
   },
   {
-    id: 7,
+    id: uuidv4(),
     employer: "TDS",
     positions: [
       {

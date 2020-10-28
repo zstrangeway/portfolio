@@ -15,7 +15,7 @@ const Skills = ({ id }: SkillsProps): JSX.Element => {
           {skillSets.map((skillSet) => {
             return (
               <SkillsCard
-                key={skillSet.subject}
+                key={skillSet.id}
                 skillSet={skillSet}
                 height={skillSet.height}
               />

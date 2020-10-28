@@ -1,4 +1,5 @@
 export type Certification = {
+  id: string;
   name: string;
   imageUrl: string;
   link: string;
@@ -12,7 +13,7 @@ export type Contact = {
 };
 
 export type HistoryItem = {
-  id: number;
+  id: string;
   employer: string;
   positions: Position[];
 };
@@ -27,6 +28,7 @@ export type Position = {
 };
 
 export type Project = {
+  id: string;
   title: string;
   description: string;
   technologies: string[];
@@ -42,6 +44,7 @@ export type Section = {
 };
 
 export type SkillSet = {
+  id: string;
   subject: string;
   skills: string[];
   height: number;
