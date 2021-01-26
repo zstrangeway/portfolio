@@ -4,6 +4,18 @@ import { v4 as uuidv4 } from "uuid";
 const projects: Project[] = [
   {
     id: uuidv4(),
+    title: "TASC Universal Benefit Account",
+    description:
+      "A mobile and web app for managing Flex spending accounts. Created while employed by TASC.",
+    technologies: ["iOS", "Android", "Swift", "Kotlin", "Angular", "AWS"],
+    url: "https://www.tasconline.com/ubaaccess",
+    appleAppStoreUrl:
+      "https://apps.apple.com/us/app/tasc-app-for-iphone/id1445397411",
+    googlePlayUrl:
+      "https://play.google.com/store/apps/details?id=com.tasconline.uba.pux.android",
+  },
+  {
+    id: uuidv4(),
     title: "Gravy Live",
     description:
       "A live streaming e-commerce app for iOS and Android. Created while employed by Gravy Live. Has since pivoted and rebranded to Spin Live.",
